@@ -29,7 +29,8 @@ export async function getStaticProps({params}){
   const {items} = await client.getEntries({content_type: 'dining', 'fields.slug' : params.slug  });
 
   return{
-    props: {diner: items[0]}
+    props: {diner: items[0]},
+    revalidate: 1
   }
 }
 
