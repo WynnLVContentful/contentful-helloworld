@@ -37,27 +37,31 @@ export default function RecipeDetails({diner}) {
 
   const {featuredImage, title, logDescription, specials } = diner.fields
 
-  console.log(diner)
+  console.log(specials);
 
   return (
     <div>
       <div className='banner'>
        <Image src={'https:' + featuredImage.fields.file.url}
                     width={featuredImage.fields.file.details.image.width} 
-                    height={featuredImage.fields.file.details.image.height} />       
+                    height={featuredImage.fields.file.details.image.height}
+                    alt={featuredImage.fields.title} />       
         
       </div>
       <div className='info'>
         <h1>{title}</h1>
         <p>{documentToReactComponents(logDescription)}</p>
         <div>
-          <h3>Specials</h3>
-          {specials.map(s => {
-            <span>{s}</span>
-          })}
+          <h3>Specials:</h3>
+          <ul>
+          {specials.map((s) => 
+            <li>{s}</li>
+          )}
+          </ul>
         </div>
         <Link href="/">Back</Link>
       </div>
+
       <style jsx>{`
         
       `}
