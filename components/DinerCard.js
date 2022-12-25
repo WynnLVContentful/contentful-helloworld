@@ -22,7 +22,7 @@ export default function DiningCard({diner}){
                     </p>
                 </div>
                 <div className="actions">
-                    <Link href={'/recipes/' + slug} >View Details</Link>
+                    <Link href={'/dining/' + slug} >View Details</Link>
                 </div>
             </div>
 
