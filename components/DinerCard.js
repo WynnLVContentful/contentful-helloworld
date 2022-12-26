@@ -1,24 +1,25 @@
 import Link from "next/link";
-//import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Image from 'next/image'
 
 export default function DiningCard({diner}){
     console.log(diner);
 
-    const {title, slug, thumbnail} = diner.fields;
+    const {title, slug, shortDescription, thumbnail} = diner.fields;
 
     return(
         <div className="card">
             <div className="featured">
                 <Image src={'https:' + thumbnail.fields.file.url}
                     width={thumbnail.fields.file.details.image.width} 
-                    height={thumbnail.fields.file.details.image.height} />
+                    height={thumbnail.fields.file.details.image.height} 
+                    alt={thumbnail.fields.title} />
             </div>
             <div className="content">
                 <div className="info">
                     <h4>{title}</h4>
                     <p>
-                        Description will go here
+                        {documentToReactComponents(shortDescription)}
                     </p>
                 </div>
                 <div className="actions">
@@ -36,6 +37,9 @@ export default function DiningCard({diner}){
                     }
                     .card .featured img{
                         width: 100%;
+                    }
+                    .actions{
+                        margin-bottom: 1px;
                     }
                 `}
             </style>
