@@ -1,15 +1,14 @@
 import Link from 'next/link'
+import Logo from './Logo'
+import Navigation from './Navigation'
+import Footer from './Footer' 
 
 export default function Layout({ children }) {
   return (
     <div className="layout">
+      <Logo></Logo>
       <header>
-        <Link href="/">
-            <h1>
-              <span>Wynn Restaurants</span>
-              <span>Best in the world</span>
-            </h1>                  
-        </Link>
+        <Navigation></Navigation>
       </header>
 
       <div className="page-content">
@@ -17,7 +16,7 @@ export default function Layout({ children }) {
       </div>
 
       <footer>
-        <p>Copyright 2022 Just Add Wynn Las Vegas</p>
+        <Footer></Footer>
       </footer>
     </div>
   )
