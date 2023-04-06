@@ -5,36 +5,36 @@ import Link from 'next/link';
 import DiningCard from '../../components/DinerCard';
 import Skeleton from '../../components/Skeleton';
 
-const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
-});
+// const client = createClient({
+//   space: process.env.CONTENTFUL_SPACE_ID,
+//   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+// });
 
-export const getStaticPaths = async () => {
+// export const getStaticPaths = async () => {
   
-  const res = await client.getEntries({content_type: 'dining'});
+//   const res = await client.getEntries({content_type: 'dining'});
 
-  const paths = res.items.map(item => {
-    return{
-      params: {slug: item.fields.slug}
-    }    
-  })
+//   const paths = res.items.map(item => {
+//     return{
+//       params: {slug: item.fields.slug}
+//     }    
+//   })
 
-  return {
-    paths,
-    fallback: true
-  }
-}
+//   return {
+//     paths,
+//     fallback: true
+//   }
+// }
 
-export async function getStaticProps({params}){
+// export async function getStaticProps({params}){
   
-  const {items} = await client.getEntries({content_type: 'dining', 'fields.slug' : params.slug  });
+//   const {items} = await client.getEntries({content_type: 'dining', 'fields.slug' : params.slug  });
 
-  return{
-    props: {diner: items[0]},
-    revalidate: 1
-  }
-}
+//   return{
+//     props: {diner: items[0]},
+//     revalidate: 1
+//   }
+// }
 
 export default function RecipeDetails({diner}) {
 
