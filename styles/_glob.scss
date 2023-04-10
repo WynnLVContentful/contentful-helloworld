@@ -1,0 +1,133 @@
+body {
+    font-family: $font-florensans-title;
+    color: $--primary-color;
+    background-color: var(--bg-color);
+    @include font-size($base-font-size);
+}
+
+a {
+    color: $--primary-color;
+    text-decoration: none;
+
+    &:hover {
+        color: $--secondary-color;
+        text-decoration: underline;
+    }
+}
+
+.container {
+    max-width: 1140px;
+}
+
+@include media-size(big-desktop) {
+    .container {
+        max-width: 1340px;
+    }
+}
+
+// Heading
+h1,
+.h1,
+h2,
+.h2 {
+    @include header-style;
+}
+
+h1,
+.h1 {
+    @include font-size-m($font-size-28);
+
+    @include media-size(big-mobile) {
+        @include font-size($font-size-32);
+    }
+
+    text-transform: uppercase;
+}
+
+h2,
+.h2 {
+    @include font-size-m($font-size-28);
+    // @include header-style-underline;
+
+    @include media-size(big-mobile) {
+        @include font-size($font-size-32);
+    }
+}
+
+h3,
+.h3 {
+    text-align: left;
+    @include font-size-m($font-size-20);
+    font-family: $font-rustica-500;
+
+    &::after {
+        display: none;
+    }
+}
+
+h4,
+.h4 {
+    text-align: left;
+    @include font-size-m($font-size-20);
+    font-family: $font-rustica-500;
+
+    &::after {
+        display: none;
+    }
+}
+
+h5,
+.h5 {
+    text-align: left;
+    @include font-size-m($font-size-16);
+    font-family: $font-rustica-500;
+
+    &::after {
+        display: none;
+    }
+}
+
+p {
+    font-size: font-size($base-font-size);
+    font-family: $font-rustica-300;
+}
+
+// CTA Buttons
+.btn {
+    @include cta-button;
+}
+
+.btn-primary {
+    background-color: $--secondary-color;
+    color: $white;
+
+    &:visited,
+    &:active,
+    &:first-child:active {
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
+    }
+
+    &:hover {
+        background-color: $white;
+        color: $--primary-color;
+        border: 1px solid $--primary-color;
+    }
+}
+
+.btn-secondary {
+    background-color: $white;
+    color: var(--secondary-color);
+
+    &:visited,
+    &:active {
+        background-color: $white !important;
+        color: var(--secondary-color) !important;
+    }
+
+    &:hover {
+        background-color: var(--secondary-color);
+        color: $white;
+        border-color: var(--secondary-color-hover);
+    }
+}

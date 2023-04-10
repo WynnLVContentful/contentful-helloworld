@@ -1,45 +1,49 @@
 import { Fragment } from "react";
 import Link from "next/link";
-export default function Navigation() {
-
-    return (
-        <Fragment>
-            <ul className="navbar-nav  d-flex ">
-                <li className="nav-item ">
+import Logo from "./Logo";
+function MobileNav(props) {
+    console.log(props.toggleFeature)
+    const checkMobileNav = props.toggleFeature ? "open" : "close";
+    return (<Fragment>
+        <section className={`mobile-nav mobile-nav-${checkMobileNav}`}>
+            <ul className="nav-lists">
+                <li className="nav-item">
                     <Link href="/" className="nav-link">
                         Home
                     </Link>
                 </li>
-                <li className="nav-item ">
+                <li className="nav-item">
                     <Link href="/" className="nav-link">
                         LETTER FROM THE CEO
 
                     </Link>
                 </li>
-                <li className="nav-item ">
+                <li className="nav-item">
                     <Link href="/" className="nav-link">
                         ESG REPORTS
 
                     </Link>
                 </li>
-                <li className="nav-item ">
+                <li className="nav-item">
                     <Link href="/" className="nav-link">
                         INVESTOR SUMMARY
 
                     </Link>
                 </li>
-                <li className="nav-item ">
+                <li className="nav-item">
                     <Link href="/" className="nav-link">
                         EEO-1
 
                     </Link>
                 </li>
-                <li className="nav-item ">
+                <li className="nav-item">
                     <Link href="/" className="nav-link">
                         PRESS UPDATES
                     </Link>
                 </li>
             </ul>
-        </Fragment>
-    );
+        </section>
+    </Fragment>);
 }
+
+export default MobileNav;

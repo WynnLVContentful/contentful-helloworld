@@ -1,0 +1,30 @@
+// ******************************************
+// Fonts
+// ******************************************
+// @import "font1" from "../public/fonts/rustica-light.woff";
+@font-face {
+    font-family: 'RusticaLight';
+    src: url("/fonts/rustica-light.woff2") format('truetype');
+    // src: url('../fonts/rustica-light.eot?#iefix') format('embedded-opentype'), url('../fonts/rustica-light.woff') format('woff'), url('../fonts/rustica-light.ttf') format('truetype'), url('../fonts/rustica-light.svg?#AvenirLTStd35Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rustica';
+     src: url('/fonts/rustica-regular.woff') format('truetype');
+    //  src: url('/fonts/rustica-regular?#iefix') format('embedded-opentype'), url('/fonts/rustica-regular.woff') format('woff'), url('/fonts/rustica-regular.ttf') format('truetype'), url('/fonts/rustica-regular.svg?#Rustica') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Florensans';
+    src: url('/fonts/florensans.woff2') format('truetype');
+    // src: url('../fonts/florensans.eot?#iefix') format('embedded-opentype'), url('../fonts/florensans.woff2') format('woff2'), url('../fonts/florensans.woff') format('woff'), url('../fonts/florensans.ttf') format('truetype'), url('../fonts/florensans.svg#Florensans') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
