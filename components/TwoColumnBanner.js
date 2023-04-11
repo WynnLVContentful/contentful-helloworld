@@ -3,9 +3,9 @@ import sideImages from "../public/farmer-image.jpg";
 // import yonathan from "../public/farmer-image.jpg";
 function TwoColumnBanner() {
     return (
-        <section className="two-column mt-5">
+        <section className="two-column reverse-position-image mt-5">
             <div className="container">
-                <div className="content">
+                <div className="reverse-position-image">
                     <div className="two-column-image-left">
                         <Image width={536} height={332} src={sideImages} alt="farmer-picture" className="left-side-image" />
                     </div>

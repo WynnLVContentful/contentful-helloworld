@@ -3,6 +3,8 @@ body {
     color: $--primary-color;
     background-color: var(--bg-color);
     @include font-size($base-font-size);
+    margin: 0;
+    box-sizing: border-box;
 }
 
 a {
@@ -117,7 +119,7 @@ p {
 
 .btn-secondary {
     background-color: $white;
-    color: var(--secondary-color);
+    color: $--secondary-color;
 
     &:visited,
     &:active {
@@ -129,5 +131,23 @@ p {
         background-color: var(--secondary-color);
         color: $white;
         border-color: var(--secondary-color-hover);
+    }
+}
+
+.btn-link {
+    text-decoration: none;
+    color: $--primary-color;
+    
+
+    &:visited,
+    &:active {
+        background-color: $white !important;
+        color: var(--secondary-color) !important;
+    }
+
+    &:hover {
+        color: $teal500;
+        border-bottom: 1px solid $teal800;
+        text-decoration: none;
     }
 }

@@ -1,0 +1,51 @@
+.teaser-card {
+    margin: 50px 0;
+
+    &-carousel {
+        width: calc(100% - 2em);
+        margin: 0 auto;
+
+        &-holder {
+            align-items: stretch;
+        }
+
+        .card {
+            height: 100%;
+
+            &-footer {
+                a {
+                    font-size: $font-size-16;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .carou-image {
+            display: block;
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        .content {
+            &_list {
+                list-style: none;
+            }
+
+            &_item {
+                font-weight: 100 !important;
+                font-family: $font-rustica-300 ;
+                position: relative;
+
+                &:before {
+                    content: "\2713";
+                    position: absolute;
+                    top: 0;
+                    left: -20px;
+                    width: 10px;
+                    height: 10px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
