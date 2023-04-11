@@ -1,42 +1,39 @@
 .layout {
     position: relative;
-    // top: 0;
-    // z-index: 10000000;
-
+    
     border-bottom: 1px solid $--primary-color;
 
     #nav-toggle {
-        width: 60px;
-        height: 45px;
-        background-color: white;
+        width: 30px;
+        height: 24px;
         position: absolute;
-        top: -30px;
-        right: 10px;
-        margin: 50px auto;
-        transform: rotate(0deg);
-        transition: .5s ease-in-out;
+        top: 20px;
+        right: 20px;
         cursor: pointer;
+        z-index: 10000;
 
         span {
             display: block;
-            height: 2px;
-            width: 60%;
-            margin: 8px auto;
-            background-color: black;
-            transform: rotate(0deg);
-            transition: .25s ease-in-out;
             position: absolute;
+            height: 3px;
+            width: 100%;
+            background: $--txt-color;
+            border-radius: 2px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: 0.25s ease-in-out;
 
             &:nth-child(1) {
                 top: 0;
                 transform-origin: left center;
             }
-
+    
             &:nth-child(2) {
                 top: 10px;
                 transform-origin: left center;
             }
-
+    
             &:nth-child(3) {
                 top: 20px;
                 transform-origin: left center;
@@ -74,41 +71,42 @@
         .mobile-nav {
             display: flex;
             justify-content: flex-end;
-            position: absolute;
             width: 100%;
-            top: 100px;
-            right: 0;
-            bottom: 0;
             left: 0;
-            background-color: transparent;
             color: $white;
             height: 100vh;
             z-index: 9999;
-            transition: opacity 300ms ease-in-out;
+            //
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%; 
+            background-color: rgba(0, 0, 0, 0.8); 
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+           
 
             &-open {
 
-                animation: side-Navbar 200ms linear 300ms forwards;
                 opacity: 1;
+        transform: translateX(0);
             }
 
             &-close {
-                animation: side-Navbar-close 200ms linear 300ms forwards;
                 opacity: 0;
+                transform: translateX(100%);
             }
-
-            // animation: side-Navbar 200ms linear 300ms forwards;
-
 
             .nav-lists {
                 max-width: 80%;
                 margin-right: -10px;
                 height: 100%;
                 text-align: center;
-                background-color: $white;
+                background-color: rgba(255, 255, 255, 0.95);
                 border: 1px solid $--primary-color;
                 border-top-left-radius: 10px;
                 border-top-left-radius: 10px;
+                border-radius: 0 0 0 10px;
                 color: $--txt-color;
                 padding: 150px 30px;
                 list-style: none;
@@ -119,10 +117,19 @@
                 }
 
                 .nav-link {
-                    margin-top: 10px;
-                    text-transform: uppercase;
-                    color: black;
+                    // margin-top: 10px;
+                     text-transform: uppercase;
                     font-family: $font-rustica-500;
+                    font-size: 1.2rem; 
+                    font-weight: bold; 
+                    padding: 12px 24px; 
+                    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; // Add a transition for background-color and color
+                
+                    &:hover,
+                    &:focus {
+                        background-color: $--primary-color; // Change the background color to the primary color when hovering or focusing
+                        color: $white; // Change the text color to white when hovering or focusing
+                    }
                 }
             }
         }
@@ -139,21 +146,20 @@
     #nav-toggle.open {
         span {
             &:nth-child(1) {
+                top: 10px; // Move the first line to the middle
                 transform: rotate(45deg);
-                top: -3px;
-                left: 8px;
+                transform-origin: center center;
             }
-
+    
             &:nth-child(2) {
-                width: 0%;
                 opacity: 0;
+                left: -60px; // Move the line out of view
             }
-
+    
             &:nth-child(3) {
+                top: 10px; // Move the third line to the middle
                 transform: rotate(-45deg);
-                top: 20px;
-                left: 8px;
-                transform-origin: 1px 4px;
+                transform-origin: center center;
             }
         }
     }
@@ -194,37 +200,3 @@
     }
 }
 
-@keyframes side-Navbar {
-    0% {
-        display: block;
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 0.25;
-    }
-
-    100% {
-        opacity: 1;
-    }
-
-}
-
-@keyframes side-Navbar-close {
-    0% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
-
-    95% {
-        opacity: 0;
-    }
-
-    100% {
-        display: none;
-    }
-
-}
