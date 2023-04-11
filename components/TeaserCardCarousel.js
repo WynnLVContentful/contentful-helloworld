@@ -9,8 +9,8 @@ export default function TeaserCardCarousel() {
                 <div className="teaser-card-carousel">
                     <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 teaser-card-holder">
                         <div className="col mb-3">
-                            <div className="card  border-0 ">
-                                <Image src={firstCard} width={414} height={332} className=" shadow-lg card-img-top carou-image rounded shadow-lg" alt="first content descriptions" />
+                            <div className="card  border-0  shadow-lg ">
+                                <Image src={firstCard} width={414} height={332} className=" card-img-top carou-image  shadow-lg" alt="first content descriptions" />
                                 <div className="card-body">
                                     <div className="card-title">
                                         <h3 className="text-left mb-4">OUR PEOPLE</h3>
@@ -25,15 +25,15 @@ export default function TeaserCardCarousel() {
                                     </div>
                                 </div>
                                 <div className="card-footer bg-white border-0">
-                                    <Link href="#" className="link-footer-card btn-link-item">
+                                    <Link href="detail-id-page/test1" className="link-footer-card btn-link-item">
                                         <span className="btn-link">Read More</span>
                                     </Link>
                                 </div>
                             </div>
                         </div>
                         <div className="col mb-3 ">
-                            <div className="card  border-0 ">
-                                <Image src={firstCard} width={414} height={332} className=" shadow-lg card-img-top carou-image rounded" alt="first content descriptions" />
+                            <div className="card  border-0  shadow-lg ">
+                                <Image src={firstCard} width={414} height={332} className=" shadow-lg card-img-top carou-image " alt="first content descriptions" />
                                 <div className="card-body">
                                     <div className="card-title">
                                         <h3 className="text-left mb-4">OUR PEOPLE</h3>
@@ -48,15 +48,15 @@ export default function TeaserCardCarousel() {
                                     </div>
                                 </div>
                                 <div className="card-footer bg-white border-0">
-                                    <Link href="#" className="link-footer-card btn-link-item">
+                                    <Link href="detail-id-page/test1" className="link-footer-card btn-link-item">
                                         <span className="btn-link">Read More</span>
                                     </Link>
                                 </div>
                             </div>
                         </div>
                         <div className="col mb-3 ">
-                            <div className="card  border-0 ">
-                                <Image src={firstCard} width={414} height={332} className="shadow-lg  card-img-top carou-image rounded" alt="first content descriptions" />
+                            <div className="card  border-0  shadow-lg ">
+                                <Image src={firstCard} width={414} height={332} className="shadow-lg  card-img-top carou-image " alt="first content descriptions" />
                                 <div className="card-body">
                                     <div className="card-title">
                                         <h3 className="text-left mb-4">OUR PEOPLE</h3>
@@ -71,15 +71,15 @@ export default function TeaserCardCarousel() {
                                     </div>
                                 </div>
                                 <div className="card-footer bg-white border-0">
-                                    <Link href="#" className="link-footer-card btn-link-item">
+                                    <Link href="detail-id-page/test1" className="link-footer-card btn-link-item">
                                         <span className="btn-link">Read More</span>
                                     </Link>
                                 </div>
                             </div>
                         </div>
                         <div className="col mb-3 ">
-                            <div className="card  border-0 ">
-                                <Image src={firstCard} width={414} height={332} className="shadow-lg  card-img-top carou-image rounded" alt="first content descriptions" />
+                            <div className="card  border-0  shadow-lg ">
+                                <Image src={firstCard} width={414} height={332} className="shadow-lg  card-img-top carou-image " alt="first content descriptions" />
                                 <div className="card-body">
                                     <div className="card-title">
                                         <h3 className="text-left mb-4">OUR PEOPLE</h3>
@@ -94,15 +94,15 @@ export default function TeaserCardCarousel() {
                                     </div>
                                 </div>
                                 <div className="card-footer bg-white border-0">
-                                    <Link href="#" className="link-footer-card btn-link-item">
+                                    <Link href="detail-id-page/test1" className="link-footer-card btn-link-item">
                                         <span className="btn-link">Read More</span>
                                     </Link>
                                 </div>
                             </div>
                         </div>
                         <div className="col mb-3">
-                            <div className="card  border-0 ">
-                                <Image src={firstCard} width={414} height={332} className="shadow-lg  card-img-top carou-image rounded" alt="first content descriptions" />
+                            <div className="card  border-0  shadow-lg ">
+                                <Image src={firstCard} width={414} height={332} className="shadow-lg  card-img-top carou-image " alt="first content descriptions" />
                                 <div className="card-body">
                                     <div className="card-title">
                                         <h3 className="text-left mb-4">OUR PEOPLE</h3>
@@ -117,15 +117,15 @@ export default function TeaserCardCarousel() {
                                     </div>
                                 </div>
                                 <div className="card-footer bg-white border-0">
-                                    <Link href="#" className="link-footer-card btn-link-item">
+                                    <Link href="detail-id-page/test1" className="link-footer-card btn-link-item">
                                         <span className="btn-link">Read More</span>
                                     </Link>
                                 </div>
                             </div>
                         </div>
                         <div className="col mb-3 ">
-                            <div className="card  border-0 ">
-                                <Image src={firstCard} width={414} height={332} className="shadow-lg  card-img-top carou-image rounded" alt="first content descriptions" />
+                            <div className="card  border-0  shadow-lg ">
+                                <Image src={firstCard} width={414} height={332} className="shadow-lg  card-img-top carou-image " alt="first content descriptions" />
                                 <div className="card-body">
                                     <div className="card-title">
                                         <h3 className="text-left mb-4">OUR PEOPLE</h3>
@@ -140,15 +140,15 @@ export default function TeaserCardCarousel() {
                                     </div>
                                 </div>
                                 <div className="card-footer bg-white border-0">
-                                    <Link href="#" className="link-footer-card btn-link-item">
+                                    <Link href="detail-id-page/test1" className="link-footer-card btn-link-item">
                                         <span className="btn-link">Read More</span>
                                     </Link>
                                 </div>
                             </div>
                         </div>
                         <div className="col mb-3 ">
-                            <div className="card border-0 ">
-                                <Image src={firstCard} width={414} height={332} className="shadow-lg  card-img-top carou-image rounded" alt="first content descriptions" />
+                            <div className="card border-0 shadow-lg">
+                                <Image src={firstCard} width={414} height={332} className="shadow-lg  card-img-top carou-image " alt="first content descriptions" />
                                 <div className="card-body">
                                     <div className="card-title">
                                         <h3 className="text-left mb-4">OUR PEOPLE</h3>
@@ -162,11 +162,11 @@ export default function TeaserCardCarousel() {
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="card-footer bg-white border-0">
-                                <Link href="#" className="link-footer-card btn-link">
-                                    <span className="btn-link">Read More</span>
-                                </Link>
+                                <div className="card-footer bg-white border-0">
+                                    <Link href="detail-id-page/test1" className="link-footer-card btn-link">
+                                        <span className="btn-link">Read More</span>
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import Image from "next/image";
-import imageweb from "../public/hero-web.png";
+import imageweb from "../public/hero-home-web.jpeg";
 import imagemobile from "../public/hero-mobile.png"
 export default function HeroCarousel() {
 

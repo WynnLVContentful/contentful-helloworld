@@ -8,7 +8,7 @@ body {
 }
 
 a {
-    color: $--primary-color;
+    color: $--txt-color;
     text-decoration: none;
 
     &:hover {
@@ -92,8 +92,11 @@ h5,
 p {
     font-size: font-size($base-font-size);
     font-family: $font-rustica-300;
+    color: $--txt-color
 }
-
+span {
+  color: $--txt-color;
+}
 // CTA Buttons
 .btn {
     @include cta-button;

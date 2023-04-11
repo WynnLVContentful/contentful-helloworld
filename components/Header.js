@@ -11,7 +11,7 @@ export default function Header() {
     }
     if (typeof window !== "undefined") {
         window.addEventListener("scroll", () => {
-            if (window.scrollY > 230) {
+            if (window.scrollY > 200) {
                 setNavbar(true);
             } else {
                 setNavbar(false)

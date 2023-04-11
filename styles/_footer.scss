@@ -16,12 +16,16 @@
        }
 
        p {
-
+          color: $white;
           margin-bottom: 0;
        }
     }
 
     .copy-right {
+          color: $white;
        margin-top: 40px;
+       span{
+         color: $white
+       }
     }
  }

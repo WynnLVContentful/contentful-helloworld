@@ -1,7 +1,7 @@
 .layout {
     position: relative;
     background: $white;
-    border-bottom: 1px solid $--primary-color;
+
     #nav-toggle {
         width: 30px;
         height: 24px;
@@ -27,12 +27,12 @@
                 top: 0;
                 transform-origin: left center;
             }
-    
+
             &:nth-child(2) {
                 top: 10px;
                 transform-origin: left center;
             }
-    
+
             &:nth-child(3) {
                 top: 20px;
                 transform-origin: left center;
@@ -63,8 +63,35 @@
 
         .navbar-navs {
             display: none;
+        }
 
+        .nav-item {
+            position: relative;
+            padding: 0;
+        }
 
+        .nav-link {
+            text-decoration: none;
+            transition: color 0.5s ease-in-out;
+            &::after {
+                position: absolute;
+                bottom: -30px;
+                left: 0;
+                right: 0;
+                margin: auto;
+                background-color: $--secondary-color;
+                width: 0%;
+                content: "";
+                height: 2px;
+                transition: all 0.5s;
+            }
+
+            &:hover {
+                color: $--secondary-color;
+                &::after {
+                    width: 100%;
+                }
+            }
         }
 
         .mobile-nav {
@@ -80,15 +107,15 @@
             top: 0;
             right: 0;
             bottom: 0;
-            width: 100%; 
-            background-color: rgba(0, 0, 0, 0.8); 
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
             transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-           
+
 
             &-open {
 
                 opacity: 1;
-        transform: translateX(0);
+                transform: translateX(0);
             }
 
             &-close {
@@ -117,13 +144,13 @@
 
                 .nav-link {
                     // margin-top: 10px;
-                     text-transform: uppercase;
+                    text-transform: uppercase;
                     font-family: $font-rustica-500;
-                    font-size: 1.2rem; 
-                    font-weight: bold; 
-                    padding: 12px 24px; 
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    padding: 12px 24px;
                     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; // Add a transition for background-color and color
-                
+
                     &:hover,
                     &:focus {
                         background-color: $--primary-color; // Change the background color to the primary color when hovering or focusing
@@ -149,12 +176,12 @@
                 transform: rotate(45deg);
                 transform-origin: center center;
             }
-    
+
             &:nth-child(2) {
                 opacity: 0;
                 left: -60px; // Move the line out of view
             }
-    
+
             &:nth-child(3) {
                 top: 10px; // Move the third line to the middle
                 transform: rotate(-45deg);
@@ -163,25 +190,28 @@
         }
     }
 }
+
 .layout.active {
     z-index: 9999;
     position: fixed;
     top: 0;
     opacity: 0.6;
-    // height: 100%;
-     width: 100%;
+    width: 100%;
     animation: slide-down 300ms forwards;
 }
+
 @keyframes slide-down {
     0% {
         opacity: 0;
         transform: translateY(-100%);
-    } 
+    }
+
     100% {
         opacity: 0.9;
         transform: translateY(0);
-    } 
+    }
 }
+
 @include media-size(desktop) {
     .layout.navbar {
         .navbar-expand-lg .navbar-collapse {
@@ -216,4 +246,3 @@
         }
     }
 }
-
