@@ -1,23 +1,19 @@
 import Link from 'next/link'
+import { Fragment, useState } from 'react'
 import Logo from './Logo'
 import Navigation from './Navigation'
-import Footer from './Footer' 
-
+import Footer from './Footer'
+import MobileNav from './mobile-navbar';
+import Header from './Header';
 export default function Layout({ children }) {
   return (
-    <div className="layout">
-      <Logo></Logo>
-      <header>
-        <Navigation></Navigation>
-      </header>
-
-      <div className="page-content">
-        { children }
+    <Fragment>
+      <div className='testone'>
+        <Header />
+         <main className="page-content">
+          {children}
+        </main>
       </div>
-
-      <footer>
-        <Footer></Footer>
-      </footer>
-    </div>
+    </Fragment>
   )
 }
