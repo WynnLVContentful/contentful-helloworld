@@ -6,14 +6,14 @@ import Footer from './Footer'
 import MobileNav from './mobile-navbar';
 import Header from './Header';
 export default function Layout({ children }) {
+
+
   return (
     <Fragment>
-      <div className='testone'>
-        <Header />
-         <main className="page-content">
-          {children}
-        </main>
-      </div>
+      <Header />
+      <main className="page-content">
+        {children}
+      </main>
     </Fragment>
   )
 }
