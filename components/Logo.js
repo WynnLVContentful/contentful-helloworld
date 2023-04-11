@@ -2,6 +2,6 @@
 export default function Logo(){
 
     return(
-        <div>Logo</div>
+        <div>Logo 1</div>
     );
 }
