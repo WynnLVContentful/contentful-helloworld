@@ -11,27 +11,23 @@ export default function Navigation() {
                     </Link>
                 </li>
                 <li className="nav-item ">
-                    <Link href="/" className="nav-link">
+                    <Link href="/CEOLetter" className="nav-link">
                         LETTER FROM THE CEO
-
                     </Link>
                 </li>
                 <li className="nav-item ">
                     <Link href="/" className="nav-link">
                         ESG REPORTS
-
                     </Link>
                 </li>
                 <li className="nav-item ">
                     <Link href="/" className="nav-link">
                         INVESTOR SUMMARY
-
                     </Link>
                 </li>
                 <li className="nav-item ">
                     <Link href="/" className="nav-link">
                         EEO-1
-
                     </Link>
                 </li>
                 <li className="nav-item ">

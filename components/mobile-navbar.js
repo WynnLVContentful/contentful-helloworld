@@ -13,9 +13,8 @@ function MobileNav(props) {
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link href="/" className="nav-link">
+                    <Link href="/CEOLetter" className="nav-link">
                         LETTER FROM THE CEO
-
                     </Link>
                 </li>
                 <li className="nav-item">
