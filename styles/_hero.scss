@@ -1,0 +1,34 @@
+.hero-banner {
+    width: 100%;
+
+    .mob-web-image {
+        width: 100%;
+        height: auto;
+
+    }
+
+    .hero-image-web {
+        display: none;
+    }
+
+    .hero-image-mobile {
+        img {
+            width: 100%;
+            height: 414px;
+            min-height: 414px;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            object-position: top;
+        }
+    }
+
+    @include media-size(desktop) {
+        .hero-image-mobile {
+            display: none;
+        }
+
+        .hero-image-web {
+            display: block;
+        }
+    }
+}

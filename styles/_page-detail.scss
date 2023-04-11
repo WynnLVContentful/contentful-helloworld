@@ -1,0 +1,21 @@
+.detail-page {
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.includes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+
+    button {
+        margin: 5px;
+        margin-top: 10px;
+
+        @include media-size(tablet) {
+            margin: 10px;
+        }
+    }
+}
