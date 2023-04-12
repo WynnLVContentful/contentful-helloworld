@@ -1,7 +1,6 @@
 .layout {
     position: relative;
     background: $white;
-
     #nav-toggle {
         width: 30px;
         height: 24px;
@@ -88,9 +87,12 @@
 
             &:hover {
                 color: $--secondary-color;
-                &::after {
+               @include media-size(desktop) {
+                    &::after {
                     width: 100%;
                 }
+               }
+                
             }
         }
 
@@ -113,7 +115,6 @@
 
 
             &-open {
-
                 opacity: 1;
                 transform: translateX(0);
             }
