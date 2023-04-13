@@ -8,7 +8,7 @@ body {
 }
 
 a {
-    color: $--primary-color;
+    color: $--txt-color;
     text-decoration: none;
 
     &:hover {
@@ -92,6 +92,11 @@ h5,
 p {
     font-size: font-size($base-font-size);
     font-family: $font-rustica-300;
+    color: $--txt-color
+}
+
+span {
+    color: $--txt-color;
 }
 
 // CTA Buttons
@@ -137,7 +142,7 @@ p {
 .btn-link {
     text-decoration: none;
     color: $--primary-color;
-    
+
 
     &:visited,
     &:active {
@@ -149,5 +154,40 @@ p {
         color: $teal500;
         border-bottom: 1px solid $teal800;
         text-decoration: none;
+    }
+}
+
+.no-scroll {
+    overflow-y: hidden;
+}
+
+.canvas-donuts {
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 50px;
+}
+
+.donut {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.line-canvas-para {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.line-canvas {
+    max-width: 100%;
+}
+
+.three-column-canvas {
+    margin: 50px 0;
+
+    .list {
+        &:first-child {
+            border-right: 1px solid #F2F2DA
+        }
     }
 }

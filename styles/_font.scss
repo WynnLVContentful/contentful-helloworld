@@ -28,3 +28,11 @@
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: 'Avenirltstd';
+    src: url('/fonts/avenirltstd-light-webfont.woff') format('truetype');
+    // src: url('../fonts/florensans.eot?#iefix') format('embedded-opentype'), url('../fonts/florensans.woff2') format('woff2'), url('../fonts/florensans.woff') format('woff'), url('../fonts/florensans.ttf') format('truetype'), url('../fonts/florensans.svg#Florensans') format('svg');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
