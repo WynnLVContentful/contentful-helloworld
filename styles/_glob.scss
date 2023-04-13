@@ -161,7 +161,23 @@ span {
     overflow-y: hidden;
 }
 
+.canvas-donuts {
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 50px;
+}
+
 .donut {
     max-width: 800px;
     margin: 0 auto;
+}
+
+.line-canvas-para {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.line-canvas {
+    max-width: 100%;
 }

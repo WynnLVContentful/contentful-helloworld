@@ -9,7 +9,8 @@ import TwoColumnBanner from '../components/TwoColumnBanner';
 import React, { Fragment } from 'react';
 import TeaserCardCarousel from '../components/TeaserCardCarousel';
 import PromoBanner from '../components/PromoBanner';
-import Example from '../components/OneColumnCanvas';
+import { Watercanvas } from '../components/WaterCanvas';
+import HorizontalOne from '../components/sideBarCanvas';
 // export async function getStaticProps(){
 //   const client = createClient({
 //     space: process.env.CONTENTFUL_SPACE_ID,
@@ -28,7 +29,8 @@ import Example from '../components/OneColumnCanvas';
 
 export default function Recipes({ diners }) {
   console.log(diners)
-  const LazyExample = React.lazy(() => import('../components/OneColumnCanvas'));
+  const LazyExample = React.lazy(() => import('../components/DonutCanvas'));
+
   return (
     <Fragment>
       <HeroCarousel />
@@ -41,6 +43,8 @@ export default function Recipes({ diners }) {
       <React.Suspense fallback={<div div > Loading...</div >}>
         <LazyExample />
       </React.Suspense >
+      <Watercanvas />
+      <HorizontalOne />
     </Fragment>
   )
 }
