@@ -25,7 +25,6 @@ ChartJS.register(
 
 export const options = {
     responsive: true,
-
     plugins: {
         legend: {
             display: false,
@@ -41,16 +40,14 @@ export const options = {
         }
     },
     scales: {
-        xAxes: [
-            {
-                display: true,
-            },
-        ],
-        yAxes: [
-            {
-                display: true,
-            },
-        ],
+        x: {
+            display: true,
+        },
+        y: {
+            display: true,
+            beginAtZero: true
+        },
+
     },
 };
 
@@ -61,7 +58,7 @@ export const data = {
         {
             fill: true,
             label: 'Dataset 2',
-            data: [577000, 500000, 627000, 0],
+            data: [577000, 500000, 627000],
             borderColor: 'rgb(53, 162, 235)',
             backgroundColor: 'rgba(53, 162, 235, 0.1)',
             tension: 0,

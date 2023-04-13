@@ -1,9 +1,14 @@
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 import PromoBanner from "../../components/PromoBanner";
 import HeroCarousel from "../../components/HeroCarousel";
 import ThreeColumnBanner from "../../components/ThreeColumnBanner";
 import PageDetail from "../../components/PageDetail";
+import { Watercanvas } from "../../components/WaterCanvas";
+import TwoColumnCanvas from "../../components/twoColumnCanvas";
+import HorizontalOne from "../../components/sideBarCanvas";
+import HorizontalOneSingle from "../../components/sideBarCanvasSingle";
 function InvesterSummary() {
+    const LazyExample = React.lazy(() => import('../../components/DonutCanvas'));
     const data = {
         title: "Investor Summary",
         description: ""
@@ -18,6 +23,12 @@ function InvesterSummary() {
             <PromoBanner data={data} />
             <PageDetail data={secondData} />
             <ThreeColumnBanner class="-borderless" />
+            <React.Suspense fallback={<div div > Loading...</div >}>
+                <LazyExample />
+            </React.Suspense >
+            <Watercanvas />
+            <HorizontalOne />
+            <TwoColumnCanvas firstChild={<Watercanvas />} secondChild={<HorizontalOneSingle />} />
         </Fragment>
     );
 }

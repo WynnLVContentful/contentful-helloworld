@@ -1,57 +1,39 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import React from "react";
 import { Bar } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
-import { options } from "./WaterCanvas";
-function HorizontalOne(props) {
-    const gBarPercentage = 0.75;
-    const gCategoryPercentage = 0.70;
+function HorizontalOneSingle() {
     const [userData, setUserData] = useState({
         labels: [2019, 2020, 2021],
         datasets: [
             {
-                label: 'Wynn North America',
+                label: 'Scope 1 (Direct) Emissions',
                 backgroundColor: "#B2A99B",
-                borderColor: "#B2A99B",
-                barPercentage: gBarPercentage,
-                categoryPercentage: gCategoryPercentage,
                 data: [
-                    177283,
-                    188123,
-                    206596
+                    208038,
+                    164166,
+                    352550
                 ]
             }, {
-                label: 'Wynn Macau Limited',
+                label: 'Scope 2 (Indirect) Emissions',
                 backgroundColor: "#776457",
-                borderColor: "#776457",
-                barPercentage: gBarPercentage,
-                categoryPercentage: gCategoryPercentage,
-
                 data: [
-                    270158,
-                    226387,
-                    235934
-                ]
-            }, {
-                label: 'Company Total',
-                backgroundColor: "#006f62",
-                borderColor: "#006f62",
-                barPercentage: gBarPercentage,
-                categoryPercentage: gCategoryPercentage,
-                data: [
-                    447441,
-                    414510,
-                    442530
+                    343701,
+                    248644,
+                    261098
                 ]
             }
         ],
     });
 
-
-
     const options = {
         indexAxis: 'y',
-        aspectRatio: 3,
+        layout: {
+            padding: {
+                right: 50
+            }
+        },
+        aspectRatio: 2,
         elements: {
             rectangle: {
                 borderWidth: 0,
@@ -69,14 +51,45 @@ function HorizontalOne(props) {
             },
             tooltips: {
                 enabled: false,
-                mode: 'single',
+                mode: 'index',
+                intersect: true,
                 callbacks: {
-                    label: function (tooltipItems, data) {
-                        return ' ' + tooltipItems.xLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    label: function (context) {
+                        var label = context.dataset.label || '';
+                        if (label) {
+                            label += ': ';
+                        }
+                        label += '$' + context.parsed.y;
+                        return label;
                     }
                 }
             }
+
         },
+
+        scales: {
+            x: {
+                stacked: true,
+                gridLines: {
+                    display: false
+                },
+                ticks: {
+                    beginAtZero: false,
+                    callback: function (value, index, values) {
+                        if (parseInt(value) >= 1000) {
+                            return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                        } else {
+                            return value;
+                        }
+                    }
+                }
+            },
+            y: {
+                stacked: true,
+                beginAtZero: true,
+
+            }
+        }
 
     }
     return (
@@ -93,9 +106,13 @@ function HorizontalOne(props) {
                 </div>
             </div>
         </section>
-
     );
 }
 
-export default HorizontalOne;
+
+export default HorizontalOneSingle;
+
+
+
+
 
