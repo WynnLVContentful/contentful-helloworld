@@ -9,7 +9,7 @@ function LetterCEO() {
     return (
         <Fragment>
             <HeroCarousel />
-            <PageDetail remove={"d-none remove"} data={data} />
+            <PageDetail data={data} />
         </Fragment>
     );
 }

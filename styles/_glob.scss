@@ -94,9 +94,11 @@ p {
     font-family: $font-rustica-300;
     color: $--txt-color
 }
+
 span {
-  color: $--txt-color;
+    color: $--txt-color;
 }
+
 // CTA Buttons
 .btn {
     @include cta-button;
@@ -140,7 +142,7 @@ span {
 .btn-link {
     text-decoration: none;
     color: $--primary-color;
-    
+
 
     &:visited,
     &:active {
@@ -154,6 +156,12 @@ span {
         text-decoration: none;
     }
 }
-.no-scroll{
+
+.no-scroll {
     overflow-y: hidden;
+}
+
+.donut {
+    max-width: 800px;
+    margin: 0 auto;
 }

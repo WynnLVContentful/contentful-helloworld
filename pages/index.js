@@ -6,8 +6,10 @@ import Navigation from '../components/Navigation';
 import PageDetail from '../components/PageDetail';
 import ThreeColumnBanner from '../components/ThreeColumnBanner';
 import TwoColumnBanner from '../components/TwoColumnBanner';
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 import TeaserCardCarousel from '../components/TeaserCardCarousel';
+import PromoBanner from '../components/PromoBanner';
+import Example from '../components/OneColumnCanvas';
 // export async function getStaticProps(){
 //   const client = createClient({
 //     space: process.env.CONTENTFUL_SPACE_ID,
@@ -26,15 +28,19 @@ import TeaserCardCarousel from '../components/TeaserCardCarousel';
 
 export default function Recipes({ diners }) {
   console.log(diners)
+  const LazyExample = React.lazy(() => import('../components/OneColumnCanvas'));
   return (
     <Fragment>
       <HeroCarousel />
-      <PageDetail remove={"d-none remove"} />
-      <ThreeColumnBanner />
       <PageDetail />
+      <ThreeColumnBanner class="-borderless" />
+      <PromoBanner />
       <TwoColumnBanner />
       <ThreeColumnBanner />
-      <TeaserCardCarousel/>
+      <TeaserCardCarousel />
+      <React.Suspense fallback={<div div > Loading...</div >}>
+        <LazyExample />
+      </React.Suspense >
     </Fragment>
   )
 }

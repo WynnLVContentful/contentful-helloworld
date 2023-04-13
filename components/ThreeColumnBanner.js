@@ -1,8 +1,8 @@
 
-export default function ThreeColumnBanner() {
-
+export default function ThreeColumnBanner(props) {
+    console.log(props, "sd")
     return (
-        <section className="three-column-borderless pb-3 mt-5">
+        <section className={`three-column${props && props.class} pb-3 mt-5`}>
             <div className="container">
                 <div className="row row-cols-1 row-cols-lg-3 g-3 three-column-list ">
                     <div class="col">

@@ -18,13 +18,13 @@ function MobileNav(props) {
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link href="/" className="nav-link">
+                    <Link href="/ESG-reports" className="nav-link">
                         ESG REPORTS
 
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link href="/" className="nav-link">
+                    <Link href="/Invester-summary" className="nav-link">
                         INVESTOR SUMMARY
 
                     </Link>
