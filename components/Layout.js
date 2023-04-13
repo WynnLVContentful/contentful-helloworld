@@ -5,6 +5,7 @@ import Navigation from './Navigation'
 import Footer from './Footer'
 import MobileNav from './mobile-navbar';
 import Header from './Header';
+
 export default function Layout({ children }) {
   return (
     <Fragment>

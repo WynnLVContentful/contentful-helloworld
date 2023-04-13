@@ -1,15 +1,21 @@
 import { Fragment } from "react";
-export default function PageDetail(props) {
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
+export default function PageDetail({compProps}) {
+    if(!compProps) return;
+    const {title, text} = compProps.fields;
 
     return (
+        
         <section className="mt-5 ">
             <div className="container">
                 <div className="detail-page text-center">
-                    <h1>{props.data == undefined ? 'Wynn Resorts Targets Net-Zero Operations' : props.data.title}</h1>
-                    <p> {props.data == undefined ? ' Wynn Resorts announced three aggressive goals in 2020, ommitting to action in response to the global threat of climate change. These goals center our core values around our purpose: to benefit the environment, our guests and employees, and the communities in which we live and operate.Wynn Resorts is working toward the following three milestones:'
-                        : props.data.description}</p>
+                    <h1>{title}</h1>
+                    <p> 
+                        {documentToReactComponents(text)}
+                    </p>
                 </div>
-                <div className={props.remove + " includes"}>
+                {/* <div className={compProps.remove + " includes"}>
                     <div>
                         <button className="btn btn-primary">
                             SASB index
@@ -20,7 +26,7 @@ export default function PageDetail(props) {
                             GRI DISCLOSURE
                         </button>
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     );

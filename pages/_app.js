@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import '../styles/style.scss'
 import Layout from '../components/Layout'
 import { Fragment, useState } from 'react'
