@@ -1,27 +1,27 @@
-import PageDetail from "./PageDetail";
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import Image from "next/image";
 
-export default function PromoBanner(props) {
+
+export default function PromoBanner({compProps}) {
+
+if(!compProps) return;
+
+const {bannerTitle, bannerDescription, bannerCTAs, bannerImage, layout} = compProps.fields;
 
     return (
+
         <section className="mt-5 ">
             <div className="container">
                 <div className="detail-page text-center">
-                    <h1>{props.data == undefined ? 'Wynn Resorts Targets Net-Zero Operations' : props.data.title}</h1>
-                    <p> {props.data == undefined ? ' Wynn Resorts announced three aggressive goals in 2020, ommitting to action in response to the global threat of climate change. These goals center our core values around our purpose: to benefit the environment, our guests and employees, and the communities in which we live and operate.Wynn Resorts is working toward the following three milestones:'
-                        : props.data.description}</p>
-                </div>
-                <div className=" includes">
-                    <div>
-                        <button className="btn btn-primary">
-                            SASB index
-                        </button>
-                    </div>
-                    <div>
-                        <button className="btn btn-primary">
-                            GRI DISCLOSURE
-                        </button>
-                    </div>
-                </div>
+                <Image src={'https://' + bannerImage.fields.file.url} 
+                        width={bannerImage.fields.file.details.image.width} 
+                        height={bannerImage.fields.file.details.image.height} alt={bannerImage.fields.description} />  
+                    <h2>{bannerTitle}</h2>
+                    <p>
+                        {documentToReactComponents(bannerDescription)}
+                    </p>
+                     
+                </div>                
             </div>
         </section>
     );

@@ -21,7 +21,6 @@ export async function getStaticProps(){
 
   const res = await client.getEntry('5dkVeUwWFZ5juxb4xH6DpW');
 
-  //console.log(res);
   return{
     props: {
       homePage: res,
@@ -33,9 +32,10 @@ export async function getStaticProps(){
 export default function Home({homePage}) {
   const {content} = homePage.fields;
   return (
-    <div>
+    <Fragment>
       {
-          content.map(comp => {     
+          content.map(comp => {    
+            console.log(comp); 
             var jsx;
             switch (comp.sys.contentType.sys.id) {
               
@@ -49,10 +49,13 @@ export default function Home({homePage}) {
               case "titleAndDescription":               
                 jsx = <PageDetail key={comp.sys.id} compProps={comp}></PageDetail>
                 break;
+              case "promoBanner":               
+                jsx = <PromoBanner key={comp.sys.id} compProps={comp}></PromoBanner>                
+                break;
             }
             return jsx
          }) 
       }
-    </div>
+    </Fragment>
   )
 }
