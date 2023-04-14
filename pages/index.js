@@ -12,6 +12,7 @@ import PromoBanner from '../components/PromoBanner';
 import { Watercanvas } from '../components/WaterCanvas';
 import HorizontalOne from '../components/sideBarCanvas';
 import TwoColumnCanvas from '../components/twoColumnCanvas';
+import ThreeColumnLayout from '../components/ThreeColumnLayout';
 
 export async function getStaticProps(){
   const client = createClient({
@@ -51,6 +52,9 @@ export default function Home({homePage}) {
                 break;
               case "promoBanner":               
                 jsx = <PromoBanner key={comp.sys.id} compProps={comp}></PromoBanner>                
+                break;
+              case "threeColumnLayout":               
+                jsx = <ThreeColumnLayout key={comp.sys.id} compProps={comp}></ThreeColumnLayout>                
                 break;
             }
             return jsx
