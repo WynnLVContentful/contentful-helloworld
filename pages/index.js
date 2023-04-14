@@ -15,8 +15,8 @@ import TwoColumnCanvas from '../components/twoColumnCanvas';
 
 export async function getStaticProps(){
   const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+    space: "vsfvp3vjns8g",
+    accessToken: "QY1yhc6cZbV4FNiVoOrEPvKjbEyHjcgs5-5mZeQTqik"
   });
 
   const res = await client.getEntry('5dkVeUwWFZ5juxb4xH6DpW');
@@ -31,11 +31,11 @@ export async function getStaticProps(){
 
 export default function Home({homePage}) {
   const {content} = homePage.fields;
+  
   return (
     <Fragment>
       {
           content.map(comp => {    
-            console.log(comp); 
             var jsx;
             switch (comp.sys.contentType.sys.id) {
               

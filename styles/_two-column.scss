@@ -1,25 +1,3 @@
-// .two-column {
-//     .left-side-image {
-//         width: 100%;
-//         height: auto;
-//         border-radius: 20px;
-//     }
-
-//     .content {
-//         display: flex;
-//         flex-direction: row;
-//         justify-content: flex-start;
-
-//         img {
-//             min-width: calc(50% - 20px);
-//         }
-
-
-//     }
-
-
-// }
-
 @mixin two-col-content($size) {
     display: flex;
     flex-direction: column;
@@ -81,4 +59,8 @@
         @include two-col-content(reverse);
     }
 
+}
+.header-resize {
+    font-size: $font-size-36;
+    font-family: $font-florensans-title;
 }

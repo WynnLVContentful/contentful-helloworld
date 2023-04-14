@@ -23,9 +23,9 @@ function InvesterSummary() {
             <PromoBanner data={data} />
             <PageDetail data={secondData} />
             <ThreeColumnBanner class="-borderless" />
-            <React.Suspense fallback={<div div > Loading...</div >}>
+            {/* <React.Suspense fallback={<div div > Loading...</div >}>
                 <LazyExample />
-            </React.Suspense >
+            </React.Suspense > */}
             <Watercanvas />
             <HorizontalOne />
             <TwoColumnCanvas firstChild={<Watercanvas />} secondChild={<HorizontalOneSingle />} />

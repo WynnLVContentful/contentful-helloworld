@@ -4,7 +4,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 export default function PageDetail({compProps}) {
     if(!compProps) return;
     const {title, text} = compProps.fields;
-
+    const texts = (text.content[0].content[0].value);
     return (
         
         <section className="mt-5 ">
@@ -12,9 +12,9 @@ export default function PageDetail({compProps}) {
                 <div className="detail-page text-center">
                     <h1>{title}</h1>
                     <p> 
-                        {documentToReactComponents(text)}
+                       documentToReactComponents{texts}
                     </p>
-                </div>                
+                </div>        
             </div>
         </section>
     );
