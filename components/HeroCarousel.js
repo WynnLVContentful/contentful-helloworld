@@ -1,43 +1,35 @@
 import { Fragment } from "react";
 import Image from "next/image";
-import imageweb from "../public/hero-home-web.jpeg";
-import imagemobile from "../public/hero-mobile.png"
 export default function HeroCarousel({ compProps }) {
+  if (!compProps) return;
 
-    if (!compProps) return;
-
-    const { image } = compProps.fields;
-
-    return (
-        <Fragment>
-
-            <section className="hero-banner">
-                {image.map(hero => {
-                    return(
-                        <Fragment>
-                            <div className="hero-image-web">
-                                <Image
-                                    alt="web image"
-                                    src={'https://' + hero.fields.file.url}
-                                    width={1400}
-                                    height={414}
-                                    className="mob-web-image"
-                                />
-                            </div>
-                            <div className="hero-image-mobile">
-                                <Image
-                                    alt="mobile images"
-                                    src={'https://' + hero.fields.file.url}
-                                    width={575}
-                                    height={375}
-                                    className="image-mobile"
-                                />
-                            </div>
-                        </Fragment>
-                    )
-                })}
-            </section>
-
-        </Fragment>
-    );
+  const { image } = compProps.fields;
+  const load = {};
+  image.map((item, index) => {
+    load[index] = item.fields.file.url;
+  });
+  return (
+    <Fragment>
+      <section className="hero-banner">
+        <div className="hero-image-web">
+          <Image
+            alt="Wynn LasVegas Resorts and Casino web image"
+            src={"https://" + load[0]}
+            width={1400}
+            height={414}
+            className="mob-web-image"
+          />
+        </div>
+        <div className="hero-image-mobile">
+          <Image
+            alt="Wynn LasVegas Resorts and Casino mobile images"
+            src={"https://" + load[1]}
+            width={575}
+            height={375}
+            className="image-mobile"
+          />
+        </div>
+      </section>
+    </Fragment>
+  );
 }
