@@ -1,5 +1,5 @@
 import {createClient} from 'contentful'
-import DiningCard from '../components/DinerCard';
+
 import Logo from '../components/Logo';
 import HeroCarousel from '../components/HeroCarousel';
 import Navigation from '../components/Navigation';
@@ -12,11 +12,6 @@ import PromoBanner from '../components/PromoBanner';
 import { Watercanvas } from '../components/WaterCanvas';
 import HorizontalOne from '../components/sideBarCanvas';
 import TwoColumnCanvas from '../components/twoColumnCanvas';
-// export async function getStaticProps(){
-//   const client = createClient({
-//     space: process.env.CONTENTFUL_SPACE_ID,
-//     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
-//   });
 
 export async function getStaticProps(){
   const client = createClient({

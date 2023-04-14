@@ -14,19 +14,7 @@ export default function PageDetail({compProps}) {
                     <p> 
                         {documentToReactComponents(text)}
                     </p>
-                </div>
-                {/* <div className={compProps.remove + " includes"}>
-                    <div>
-                        <button className="btn btn-primary">
-                            SASB index
-                        </button>
-                    </div>
-                    <div>
-                        <button className="btn btn-primary">
-                            GRI DISCLOSURE
-                        </button>
-                    </div>
-                </div> */}
+                </div>                
             </div>
         </section>
     );
