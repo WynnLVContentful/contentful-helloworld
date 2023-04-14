@@ -56,6 +56,9 @@ export default function Home({homePage}) {
               case "threeColumnLayout":               
                 jsx = <ThreeColumnLayout key={comp.sys.id} compProps={comp}></ThreeColumnLayout>                
                 break;
+              case "teaserCardCarousel":               
+                jsx = <TeaserCardCarousel key={comp.sys.id} compProps={comp}></TeaserCardCarousel>                
+                break;
             }
             return jsx
          }) 
