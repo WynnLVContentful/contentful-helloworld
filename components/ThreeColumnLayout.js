@@ -1,6 +1,7 @@
 import Image from "next/image";
 
-function ThreeColumnLayout({comProps}) {
+function ThreeColumnLayout({compProps}) {
+console.log(compProps);
 
     return (
         <section className="two-column reverse-position-image mt-5">

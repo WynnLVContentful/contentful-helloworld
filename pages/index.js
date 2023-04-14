@@ -20,7 +20,7 @@ export async function getStaticProps(){
     accessToken: "QY1yhc6cZbV4FNiVoOrEPvKjbEyHjcgs5-5mZeQTqik"
   });
 
-  const res = await client.getEntry('5dkVeUwWFZ5juxb4xH6DpW');
+  const res = await client.getEntry('5dkVeUwWFZ5juxb4xH6DpW', {include: 10} );
 
   return{
     props: {
