@@ -4,9 +4,14 @@ import PageDetail from "./PageDetail";
 function ThreeColumnLayout({ compProps }) {
     if(!compProps) return;
   const { column1, column2, column3 } = compProps.fields;
-//   console.log(column1);
+  let layoutFormat;
+ if (compProps.fields.layout == "White BG"){
+  layoutFormat= '-borderless'
+ }else if (compProps.fields.layout == "Brown BG"){
+  layoutFormat= ""
+ }
   return (
-    <section className={`three-column pb-3 mt-5`}>
+    <section className={`three-column${layoutFormat} pb-3 mt-5`}>
       <div className="container">
         <div className="row row-cols-1 row-cols-lg-3 g-3 three-column-list ">
           <div className="col">

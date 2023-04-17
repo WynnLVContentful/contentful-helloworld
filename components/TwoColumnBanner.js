@@ -4,7 +4,7 @@ import sideImages from "../public/farmer-image.jpg";
 import PromoBannerHeader from "./promoBannerheader";
 // import yonathan from "../public/farmer-image.jpg";
 function TwoColumnBanner({ image, title, description, imageSide, buttonCTA }) {
-  const texts = description.content[0].content[0].value;
+  const texts = description;
   const imageRenderSide = imageSide.includes("Left")
     ? "reverse-position-image"
     : "content";
@@ -13,15 +13,17 @@ function TwoColumnBanner({ image, title, description, imageSide, buttonCTA }) {
     <section className={`two-column mt-5`}>
       <div className={!imageSide.includes("default") && imageRenderSide}>
         <div className="two-column-image-left col-12 col-lg-6">
-          {!imageSide.includes("default") && (
+          {/* {!imageSide.includes("default") || image != undefined ? (
             <Image
-              width={image.fields.file.details.image.width}
-              height={image.fields.file.details.image.height}
-              src={"https://" + image.fields.file.url}
-              alt={image.fields.description}
+              width={image.fields?.file.details.image.width || 350}
+              height={image.fields?.file.details.image.height || 350}
+              src={"https://" + image.fields?.file.url || sideImages}
+              alt={image.fields?.description}
               className="left-side-image"
             />
-          )}
+          ) : (
+            <span>test</span>
+          )} */}
         </div>
         <div
           className={`two-column-text-right ${
@@ -36,8 +38,10 @@ function TwoColumnBanner({ image, title, description, imageSide, buttonCTA }) {
             >
               {title}
             </h3>
-            <p className="mt-4">documentToReactComponents{texts}</p>
-            {imageSide.includes("default") && <PromoBannerHeader buttonCTA ={buttonCTA}/>}
+            <div>{documentToReactComponents(texts)}</div>
+            {imageSide.includes("default") && (
+              <PromoBannerHeader buttonCTA={buttonCTA} />
+            )}
           </div>
         </div>
       </div>

@@ -75,15 +75,15 @@
         .card-body {
             list-style-type: disc;
             font-size: $font-size-16;
-
+            &:first-child{
+                list-style: none;
+            }
 
             li {
                 margin-bottom: 1px;
                 text-align: left;
 
-                // @include media-size(desktop) {
-                //     text-align: left;
-                // }
+          
 
                 span {
                     font-family: $font-rustica-300;

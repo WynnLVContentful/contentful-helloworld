@@ -3,32 +3,54 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 export default function PageDetail({ compProps }) {
   if (!compProps) return;
-  console.log(compProps)
   const { title, text } = compProps.fields;
-  const texts = text.content[0].content[0].value;
+  const texts = text;
+  compProps.fields.text.content.map((item) => {
+
+    (item.content.map((items) => {
+       (items)
+    }))
+  })
   const textsContents = text.content;
-  let fileType = {};
+  let fileType = {
+    title: title,
+  };
   textsContents.map((item) => {
-    fileType[item.nodeType] = item.content;
+    if (item.nodeType =="unordered-list"){
+     
+      fileType['files'] = item.content
+
+    }else{
+   
+    if((item.content[0]?.value !== "\n\n")){
+      fileType[item.nodeType] =  item.content;
+       }
+    }
   });
-//   console.log(fileType);
+
+  // files renders
+  const files = fileType['files'] ;
+  const para =  fileType['paragraph'] ;
+
+
   function DetailsThreecolumncontent() {
     return (
       <Fragment>
         <div className="card-title ">
-          <h3 class="card-title text-center">Net-Zero by 2050</h3>
+          <h3 class="card-title text-center">{fileType.title}</h3>
         </div>
         <div class="card-body">
-          <li>
-            <span class="card-text">
-              To reduce or offset all carbon dioxide (CO2) produced by our
-              operations no later than 2050.
-            </span>
-          </li>
+            <p>{para?.map ((item) => item.value)}</p>
+            <ul class="card-text">
+              {files?.map((item,index) => (
+                <li key={index}>{item.content[0].content[0].value}</li>
+              ))}
+            </ul>
         </div>
       </Fragment>
     );
   }
+
   function PageDetailcontent() {
     return (
       <Fragment>
@@ -36,15 +58,20 @@ export default function PageDetail({ compProps }) {
           <div className="container">
             <div className="detail-page text-center">
               <h1>{title}</h1>
-              <p>documentToReactComponents{texts}</p>
+              {documentToReactComponents(texts)}
             </div>
           </div>
         </section>
       </Fragment>
     );
   }
+
+
   if (compProps.fields.layout == "Page Detail") {
-    return <PageDetailcontent />;
+
+    return (<Fragment>
+      <PageDetailcontent />
+    </Fragment>);
   } else if (compProps.fields.layout == "Content") {
     return <DetailsThreecolumncontent />;
   }
