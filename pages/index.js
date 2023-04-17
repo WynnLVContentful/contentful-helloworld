@@ -32,12 +32,13 @@ export async function getStaticProps(){
 
 export default function Home({homePage}) {
   const {content} = homePage.fields;
-  
+
   return (
     <Fragment>
       {
-          content.map(comp => {    
+          content.map(comp => {   
             var jsx;
+            //  (comp.sys.contentType.sys.id)
             switch (comp.sys.contentType.sys.id) {
               
               case "header":
@@ -55,6 +56,12 @@ export default function Home({homePage}) {
                 break;
               case "threeColumnLayout":               
                 jsx = <ThreeColumnLayout key={comp.sys.id} compProps={comp}></ThreeColumnLayout>                
+                break;
+                case "teaserCardCarousel":               
+                jsx = <TeaserCardCarousel key={comp.sys.id} compProps={comp}></TeaserCardCarousel>                
+                break;
+                case "teaserCardCarousel":               
+                jsx = <TeaserCardCarousel key={comp.sys.id} compProps={comp}></TeaserCardCarousel>                
                 break;
             }
             return jsx

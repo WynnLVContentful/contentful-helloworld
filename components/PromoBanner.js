@@ -4,7 +4,6 @@ import TwoColumnBanner from "./TwoColumnBanner";
 
 export default function PromoBanner({ compProps }) {
   if (!compProps) return;
-  console.log(compProps)
   const { bannerTitle, bannerDescription, bannerCtAs, bannerImage, layout } =  compProps.fields;
 
   const texts = bannerDescription.content[0].content[0].value;

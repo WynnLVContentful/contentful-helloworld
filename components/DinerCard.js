@@ -3,7 +3,6 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Image from 'next/image'
 
 export default function DiningCard({diner}){
-    console.log(diner);
 
     const {title, slug, shortDescription, thumbnail} = diner.fields;
 
