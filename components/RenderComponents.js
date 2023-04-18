@@ -6,6 +6,7 @@ import TeaserCardCarousel from '../components/TeaserCardCarousel';
 import PromoBanner from '../components/PromoBanner';
 import ThreeColumnLayout from '../components/ThreeColumnLayout';
 import Layout from './Layout';
+import TextBlock from './TextBlock';
 export default function RenderComponents({components}){
 console.log(components);
 const findersLogo = components.find(
@@ -37,7 +38,12 @@ const findersLogo = components.find(
                         case "teaserCardCarousel":               
                             jsx = <TeaserCardCarousel key={comp.sys.id} compProps={comp}></TeaserCardCarousel>                
                             break;
+                        case "textBlock":               
+                            jsx = <TextBlock key={comp.sys.id} compProps={comp}></TextBlock>                
+                        break;
                         }
+                        
+                        
                         return jsx
                     }) 
                 }
