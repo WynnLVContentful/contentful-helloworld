@@ -20,7 +20,7 @@ export default function HeroCarousel({ compProps }) {
           {image !== undefined && (
             <Image
               alt="Wynn LasVegas Resorts and Casino web image"
-              src={"https://" + load[0]}
+              src={"https:" + load[0]}
               width={1400}
               height={414}
               className="mob-web-image"
@@ -31,7 +31,7 @@ export default function HeroCarousel({ compProps }) {
           {image.length > 1 && image !== undefined ? (
             <Image
               alt="Wynn LasVegas Resorts and Casino mobile images"
-              src={"https://" + load[1]}
+              src={"https:" + load[1]}
               width={575}
               height={375}
               className="image-mobile"

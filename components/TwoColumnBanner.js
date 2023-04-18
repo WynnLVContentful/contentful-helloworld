@@ -5,22 +5,23 @@ import sideImages from "../public/farmer-image.jpg";
 import PromoBannerHeader from "./promoBannerheader";
 
 function TwoColumnBanner({ image, title, description, imageSide, buttonCTA }) {
-{/* <PromoBannerHeader buttonCTA={buttonCTA} /> */}
   const texts = description;
   const imageRenderSide = imageSide.includes("Left")
     ? "reverse-position-image"
     : "content";
- 
+
   return (
     <section className={`two-column mt-5`}>
-      <div className={!imageSide.includes("default") ? imageRenderSide : undefined}>
+      <div
+        className={!imageSide.includes("default") ? imageRenderSide : undefined}
+      >
         <div className="two-column-image-left col-12 col-lg-6">
-          {(!imageSide.includes("default") || image != undefined) ? (
+          {!imageSide.includes("default") || image != undefined ? (
             <Image
-              width={!image && image.fields?.file.details.image.width }
-              height={!image && image.fields?.file.details.image.height }
-              src={!image && "https://" + image.fields?.file.url }
-              alt={!image && image.fields?.description}
+              width={350}
+              height={200}
+              src={image && "https:" + image?.fields?.file.url}
+              alt={image && image?.fields?.description}
               className="left-side-image"
             />
           ) : (
@@ -43,15 +44,15 @@ function TwoColumnBanner({ image, title, description, imageSide, buttonCTA }) {
             <div>{documentToReactComponents(texts)}</div>
             <div className=" includes">
               <div>
-              {imageSide.includes("default") && (
-               buttonCTA.map((item) =>(
-                <PromoBannerHeader buttonCTA={item.fields} key={item.sys.id} /> 
-               ))
-            )}
+                {imageSide.includes("default") &&
+                  buttonCTA.map((item) => (
+                    <PromoBannerHeader
+                      buttonCTA={item.fields}
+                      key={item.sys.id}
+                    />
+                  ))}
               </div>
-           
             </div>
-           
           </div>
         </div>
       </div>
