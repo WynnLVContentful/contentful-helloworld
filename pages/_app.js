@@ -3,6 +3,7 @@ import '../styles/style.scss'
 import Layout from '../components/Layout'
 import { Fragment, useState } from 'react'
 import Footer from '../components/Footer'
+import Header from '../components/Header'
 
 function MyApp({ Component, pageProps }) {
   const [isnav, setisnav] = useState(false);
