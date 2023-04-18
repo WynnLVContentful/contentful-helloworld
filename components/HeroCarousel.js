@@ -8,8 +8,10 @@ export default function HeroCarousel({ compProps }) {
   image.map((item, index) => {
     load[index] = item.fields.file.url;
   });
+
   return (
     <Fragment>
+
       <section className="hero-banner">
         <div className="hero-image-web">
           <Image
@@ -23,7 +25,7 @@ export default function HeroCarousel({ compProps }) {
         <div className="hero-image-mobile">
           <Image
             alt="Wynn LasVegas Resorts and Casino mobile images"
-            src={"https://" + load[1]}
+            src={!image && "https://" + load[1]}
             width={575}
             height={375}
             className="image-mobile"

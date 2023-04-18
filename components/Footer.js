@@ -1,29 +1,66 @@
 import Link from "next/link";
+import { Fragment, useEffect, useState } from "react";
+import {createClient} from 'contentful'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
+
 
 export default function Footer() {
+
+    const [columns, setColumns] = useState([]);
+
+    useEffect(() => { 
+        async function fetchData() {
+            try {
+                const client = createClient({
+                    space: "vsfvp3vjns8g",
+                    accessToken: "QY1yhc6cZbV4FNiVoOrEPvKjbEyHjcgs5-5mZeQTqik"
+                  });
+            
+                const {items} = await client.getEntries({content_type:'footerNavigation', 'fields.title' : 'Footer', include: 10});
+
+                console.log(['Footer', items[0]]);
+
+                setColumns(items[0].fields.columns);
+
+            } catch (err) {
+                console.log(err);
+            }
+        }
+        fetchData();
+    }, []);
 
     return (
         <footer className="footer">
             <div className="container">
-                <div className="footer-content row row-cols-1 row-cols-lg-3">
-                    <ul className="col list-unstyled ">
-                        <li> <Link href="/">Wynn Resorts</Link></li>
-                        <li><Link href="/">Privacy policy</Link></li>
-                        <li><Link href="/">Cookie Notice</Link></li>
-                    </ul>
-                    <ul className="col list-unstyled ">
-                        <li> <Link href="/">Wynn Las Vegas</Link></li>
-                        <li><Link href="/">Encore Boston Harbor</Link></li>
-                        <li><Link href="/">Wynn Palace Cotai</Link></li>
-                        <li><Link href="/">Wynn Macau</Link></li>
-                    </ul>
-                    <ul className="col list-unstyled ">
-                        <li><p>Wynn Resorts</p></li>
-                        <li><p>3131 Las Vegas Blvd.</p></li>
-                        <li><p>Las Vegas, NV 89109</p></li>
-                        <li><p>+1 (702) 770-7555</p></li>
-                    </ul>
-                </div>
+                {columns.map(column => {
+                    switch(column.sys.contentType.sys.id)
+                    {
+                        case "navigation":
+                            return(
+                                <ul>
+                                    {column.fields.menus.map(menu =>{
+                                        return (
+                                            <li>
+                                                <Link href={menu.fields.url}>
+                                                    {menu.fields.label}
+                                                </Link>
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
+                            )                  
+                        case "textBlock":
+                            return (
+                                <div>
+                                    <h3>{column.fields.title}</h3>
+                                    
+                                </div>
+                                )
+                           
+                    }
+                })}
+               
                 <p className="copy-right"><span>&#169; </span>{new Date().getFullYear()} Wynn Resorts Holdings, LLC. All Rights Reserved.</p>
             </div>
         </footer>

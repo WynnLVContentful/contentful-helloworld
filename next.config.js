@@ -1,5 +1,13 @@
 module.exports = {
-    images: {
-      domains: ['images.ctfassets.net'],
-    },
+  reactStrictMode: true,
+  images: {
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'images.ctfassets.net',
+          port: ''
+          //pathname: '/account123/**',
+        },
+      ]
   }
+}

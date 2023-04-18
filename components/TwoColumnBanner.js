@@ -13,7 +13,7 @@ function TwoColumnBanner({ image, title, description, imageSide, buttonCTA }) {
     <section className={`two-column mt-5`}>
       <div className={!imageSide.includes("default") && imageRenderSide}>
         <div className="two-column-image-left col-12 col-lg-6">
-          {!imageSide.includes("default") && (
+          {!imageSide.includes("default") && image.fields.file.url && (
             <Image
               width={image.fields.file.details.image.width}
               height={image.fields.file.details.image.height}

@@ -13,7 +13,10 @@ export default function Logo({compProps}) {
         <Fragment>
             <div className="logo">
                 <Link href="/">
-                    <Image src={'https://' + logo.fields.file.url} width={100} height={100} alt={logo.fields.description} />                   
+                    {
+                        logo.fields.file.url && <Image src={'https://' + logo.fields.file.url} width={100} height={100} alt={logo.fields.description} />   
+                    }
+                                    
                 </Link>
             </div>
         </Fragment>

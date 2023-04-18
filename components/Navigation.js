@@ -1,41 +1,43 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Link from "next/link";
-export default function Navigation() {
+import {createClient} from 'contentful'
+
+export  default function Navigation() {
+
+    const [links, setLink] = useState([]);
+
+    useEffect(() => { 
+        async function fetchData() {
+            try {
+                const client = createClient({
+                    space: "vsfvp3vjns8g",
+                    accessToken: "QY1yhc6cZbV4FNiVoOrEPvKjbEyHjcgs5-5mZeQTqik"
+                  });
+            
+                const {items} = await client.getEntries({content_type:'navigation', 'fields.slug' : 'header-nav'});
+                const lis = items[0].fields.menus.map(item => {
+                    return  (
+                      <li className="nav-item" key={item.sys.key}>
+                        <Link href={item.fields.url} className="nav-link">
+                            {item.fields.label}
+                        </Link>
+                      </li>
+                    )});
+                    
+                    setLink(lis);
+
+            } catch (err) {
+                console.log(err);
+            }
+        }
+        fetchData();
+    }, []);
 
     return (
-        <Fragment>
-            <ul className="navbar-nav  d-flex ">
-                <li className="nav-item ">
-                    <Link href="/" className="nav-link">
-                        Home
-                    </Link>
-                </li>
-                <li className="nav-item ">
-                    <Link href="/CEOLetter" className="nav-link">
-                        LETTER FROM THE CEO
-                    </Link>
-                </li>
-                <li className="nav-item ">
-                    <Link href="/ESG-reports" className="nav-link">
-                        ESG REPORTS
-                    </Link>
-                </li>
-                <li className="nav-item ">
-                    <Link href="/Invester-summary" className="nav-link">
-                        INVESTOR SUMMARY
-                    </Link>
-                </li>
-                <li className="nav-item ">
-                    <Link href="/" className="nav-link">
-                        EEO-1
-                    </Link>
-                </li>
-                <li className="nav-item ">
-                    <Link href="/" className="nav-link">
-                        PRESS UPDATES
-                    </Link>
-                </li>
-            </ul>
-        </Fragment>
+        <nav>
+            <ul className="navbar-nav  d-flex">
+                {links}                
+            </ul> 
+        </nav>
     );
 }
