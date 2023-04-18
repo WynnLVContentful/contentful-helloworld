@@ -90,15 +90,19 @@ h5,
 }
 
 p {
-    font-size: font-size($base-font-size);
+    font-size: font-size($font-size-14);
     font-family: $font-rustica-300;
-    color: $--txt-color
+    color: $--txt-color !important;
 }
 
 span {
     color: $--txt-color;
 }
-
+li{
+    font-size: font-size($font-size-14);
+    font-family: $font-rustica-300;
+    color: $--txt-color !important;
+}
 // CTA Buttons
 .btn {
     @include cta-button;
@@ -167,8 +171,12 @@ span {
 }
 
 .donut {
-    max-width: 800px;
+    maz-width: 100%;
     margin: 0 auto;
+    
+    @include media-size(big-mobile) {
+        max-width: 800px;
+    }
 }
 
 .line-canvas-para {
@@ -189,5 +197,30 @@ span {
         &:first-child {
             border-right: 1px solid #F2F2DA
         }
+    }
+}
+.placeholder{
+   margin-bottom: 190px;
+   background-color:$white;
+}
+.people {
+    align-items: center;
+        line-height:1rem ;
+    p {
+        max-width: 100%;
+        height: auto;
+        font-size: 100px;
+        font-weight: 400;
+        color: #565656;
+        text-align: center;
+        align-self: flex-end;
+
+        @include media-size(desktop) {
+            text-align: left;
+            max-width: 50%;
+        }
+    }
+    .second{
+        color: #b8b8b8 !important;
     }
 }

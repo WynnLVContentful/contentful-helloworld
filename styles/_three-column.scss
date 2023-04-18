@@ -1,6 +1,5 @@
 .three-column {
-    // background-color: $gray100;
-
+    background-color: #f8f5f5;
     &-list {
         align-items: stretch;
 
@@ -37,7 +36,7 @@
     }
 
     .col {
-        border-left: 1px solid #F2F2DA;
+        border-left: 1px solid $--border-line-color;
         padding: 1em;
         position: relative;
 
@@ -47,7 +46,6 @@
 
         @media (max-width: 992px) {
             border-left: 1px solid white;
-            border-bottom: 1px solid #F2F2DA;
             padding-left: 10px;
             
             &:last-child {
@@ -70,21 +68,18 @@
             font-size: $font-size-20;
             text-align: center !important;
         }
-
+        
 
         .card-body {
             list-style-type: disc;
             font-size: $font-size-16;
-
+            &:first-child{
+                list-style: none;
+            }
 
             li {
                 margin-bottom: 1px;
                 text-align: left;
-
-                // @include media-size(desktop) {
-                //     text-align: left;
-                // }
-
                 span {
                     font-family: $font-rustica-300;
                     font-weight: 200 !important;

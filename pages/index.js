@@ -7,12 +7,12 @@ export async function getStaticProps(){
  
   const client = createClient({
     space: "vsfvp3vjns8g",
-    accessToken: "QY1yhc6cZbV4FNiVoOrEPvKjbEyHjcgs5-5mZeQTqik"
+    accessToken: "QY1yhc6cZbV4FNiVoOrEPvKjbEyHjcgs5-5mZeQTqik",
   });
 
   const {items} = await client.getEntries({include: 10, content_type: 'page', 'fields.slug' : '/' });
 
-  return{
+  return {
     props: {
       page: items[0],
       revalidate: 1

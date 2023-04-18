@@ -6,12 +6,11 @@ import Footer from './Footer'
 import MobileNav from './mobile-navbar';
 import Header from './Header';
 
-export default function Layout({ children }) {
-
-
+export default function Layout({ children, content }) {
+ const logoContent = content.fields.logo.fields;
   return (
     <Fragment>
-      <Header />
+     <Header logo={logoContent}  />
       <main className="page-content">
         {children}
       </main>

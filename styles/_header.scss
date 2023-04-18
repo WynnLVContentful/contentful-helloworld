@@ -54,9 +54,14 @@
             }
 
             .logo {
-                width: 130px;
-                height: auto;
-                margin: 0 auto;
+                img{
+                    width: 130px;
+                    height: auto;
+                    margin-top: -19px;
+                    @include media-size(desktop) {
+                        margin-top: 0px;
+                   }
+                 }
             }
         }
 
@@ -74,7 +79,7 @@
             transition: color 0.5s ease-in-out;
             &::after {
                 position: absolute;
-                bottom: -30px;
+                bottom: 0px;
                 left: 0;
                 right: 0;
                 margin: auto;
@@ -84,9 +89,18 @@
                 height: 2px;
                 transition: all 0.5s;
             }
+            @include media-size(desktop) {
+                &::after {
+                bottom: -30px;
+            }
+           }
 
             &:hover {
-                color: $--secondary-color;
+                color: $--secondary-color-hover !important;
+                background-color: transparent !important;
+                &::after {
+                    width: 10%;
+                }
                @include media-size(desktop) {
                     &::after {
                     width: 100%;
