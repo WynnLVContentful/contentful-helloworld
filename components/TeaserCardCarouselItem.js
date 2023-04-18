@@ -10,11 +10,11 @@ function TeaserCardItem({ title, image, description }) {
       <div className="card  border-0">
         {image !== undefined ? (
           <Image
-            src={` https:${imageRender}`}
+            src={image && `https:${imageRender}`}
             width={414}
             height={332}
             className=" card-img-top carou-image   "
-            alt="first content descriptions"
+            alt={description && description}
           />
         ) : (
           <p className="placeholder"></p>

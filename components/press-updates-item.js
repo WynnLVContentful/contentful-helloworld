@@ -26,10 +26,12 @@ function PressUpdateList({ title, lable, link, linkTitle }) {
   return (
     <Fragment>
       <div className="col">
-        <h3 className="press-list-title text-center">{title}</h3>
-        <label className="press-list-label">{dateFormat(lable)}</label>
+        <h3 className="press-list-title text-center">{title && title}</h3>
+        <label className="press-list-label">
+          {lable && dateFormat(lable)}
+        </label>
         <p className="press-list-link">
-          <Link href={link}>{linkTitle} </Link>
+          <Link href={link ? link : "/"}>{linkTitle && linkTitle} </Link>
         </p>
       </div>
     </Fragment>

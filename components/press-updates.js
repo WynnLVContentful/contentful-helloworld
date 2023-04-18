@@ -3,23 +3,21 @@ import { Fragment } from "react";
 import PressUpdateList from "./press-updates-item";
 
 
-function PressUpdate() {
+function PressUpdate({ compProps }) {
+  if (!compProps) return;
+    const {label, linkAddress,linkTextTitle, titles} = compProps.fields;
   return (
     <Fragment>
       <section className="my-5">
         <div className="container">
-          <h2>press updates</h2>
           <div className="press-list">
             <div className="row row-cols-1">
-            {dumpData.map((item, index)=>(
                <PressUpdateList
-                key={index}
-                title = {item.title}
-                lable = {item.lable}
-                link= {item.link}
-                linkTitle = {item.linkTitle}
+                title = {titles}
+                lable = {label}
+                link= {linkAddress}
+                linkTitle = {linkTextTitle}
                /> 
-            ))}
             </div>
           </div>
         </div>

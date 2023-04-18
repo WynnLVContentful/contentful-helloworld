@@ -34,6 +34,7 @@ export async function getStaticProps() {
 
 export default function Home({ homePage }) {
   const { content } = homePage.fields;
+
   const findersLogo = content.find(
     (comp) => comp.sys.contentType.sys.id == "header"
   );
@@ -47,33 +48,22 @@ export default function Home({ homePage }) {
             // jsx = <Logo key={comp.sys.id} compProps={comp}  />
             break;
           case "heroImages":
-            jsx = (
-              <HeroCarousel key={comp.sys.id} compProps={comp}></HeroCarousel>
-            );
+            jsx = <HeroCarousel key={comp.sys.id} compProps={comp} />;
             break;
           case "titleAndDescription":
-            jsx = <PageDetail key={comp.sys.id} compProps={comp}></PageDetail>;
+            jsx = <PageDetail key={comp.sys.id} compProps={comp} />;
             break;
           case "promoBanner":
-            jsx = (
-              <PromoBanner key={comp.sys.id} compProps={comp}></PromoBanner>
-            );
+            jsx = <PromoBanner key={comp.sys.id} compProps={comp} />;
             break;
           case "threeColumnLayout":
-            jsx = (
-              <ThreeColumnLayout
-                key={comp.sys.id}
-                compProps={comp}
-              ></ThreeColumnLayout>
-            );
+            jsx = <ThreeColumnLayout key={comp.sys.id} compProps={comp} />;
             break;
           case "teaserCardCarousel":
-            jsx = (
-              <TeaserCardCarousel
-                key={comp.sys.id}
-                compProps={comp}
-              ></TeaserCardCarousel>
-            );
+            jsx = <TeaserCardCarousel key={comp.sys.id} compProps={comp} />;
+            break;
+          case "pressUpdates":
+            jsx = <PressUpdate key={comp.sys.id} compProps={comp} />;
             break;
         }
         return jsx;
