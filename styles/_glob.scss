@@ -90,15 +90,19 @@ h5,
 }
 
 p {
-    font-size: font-size($base-font-size);
+    font-size: font-size($font-size-14);
     font-family: $font-rustica-300;
-    color: $--txt-color
+    color: $--txt-color !important;
 }
 
 span {
     color: $--txt-color;
 }
-
+li{
+    font-size: font-size($font-size-14);
+    font-family: $font-rustica-300;
+    color: $--txt-color !important;
+}
 // CTA Buttons
 .btn {
     @include cta-button;

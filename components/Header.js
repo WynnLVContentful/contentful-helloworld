@@ -2,10 +2,9 @@ import { Fragment, use, useEffect, useState } from "react";
 import Logo from "./Logo";
 import Navigation from "./Navigation";
 import MobileNav from "./mobile-navbar";
-export default function Header() {
+export default function Header(props) {
     const [toggle, setToggle] = useState(false);
     const [navbar, setNavbar] = useState(false);
-    const [size, setSize] = useState();
     function toggleButton() {
         setToggle((prev) => !prev)
     }
@@ -17,10 +16,6 @@ export default function Header() {
             document.querySelector("body").classList.remove("no-scroll")
         }
     }, [toggle])
-    useEffect(() => {
-
-    }, [])
-
     if (typeof window !== "undefined") {
         window.addEventListener("scroll", () => {
             if (window.scrollY > 250) {
@@ -39,12 +34,12 @@ export default function Header() {
 
     return (
         <Fragment>
-            <header >
+            <header tabIndex= "0" >
                 <div className={`layout ${navbar ? "active" : ""}`} >
                     <div className='container'>
                         <nav className='navbar navbar navbar-expand-lg'>
-                            <div className='navbar-brand'>
-                                <Logo />
+                            <div className='navbar-brand' tabIndex= "0" >
+                              { <Logo imageLogo = {props.logo} />}
                             </div>
 
                             <div className='navbar-navs collapse navbar-collapse'>
@@ -53,7 +48,7 @@ export default function Header() {
                             {<MobileNav toggleFeature={toggle} />}
                         </nav>
                     </div>
-                    <div id="nav-toggle" className={toggle ? "open" : "close"} onClick={toggleButton}>
+                    <div id="nav-toggle" className={toggle ? "open" : "close"} onClick={toggleButton} tabIndex= "0" >
                         <span></span>
                         <span></span>
                         <span></span>

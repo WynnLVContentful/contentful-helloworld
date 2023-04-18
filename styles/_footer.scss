@@ -16,13 +16,13 @@
        }
 
        p {
-          color: $white;
+          color: $white !important;
           margin-bottom: 0;
        }
     }
 
     .copy-right {
-          color: $white;
+          color: $white !important;
        margin-top: 40px;
        span{
          color: $white
