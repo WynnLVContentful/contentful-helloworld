@@ -5,12 +5,14 @@ import React, { Fragment } from 'react';
 import TeaserCardCarousel from '../components/TeaserCardCarousel';
 import PromoBanner from '../components/PromoBanner';
 import ThreeColumnLayout from '../components/ThreeColumnLayout';
-
+import Layout from './Layout';
 export default function RenderComponents({components}){
 console.log(components);
-
+const findersLogo = components.find(
+    (comp) => comp.sys.contentType.sys.id == "header"
+  );
     return (
-            <Fragment>
+        <Layout content={findersLogo}>
                 {
                     components.map(comp => {    
                         var jsx;
@@ -39,6 +41,6 @@ console.log(components);
                         return jsx
                     }) 
                 }
-                </Fragment>
+                </Layout>
     )
 }
