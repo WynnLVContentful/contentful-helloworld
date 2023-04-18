@@ -1,8 +1,8 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
-import '../styles/style.scss'
-import Layout from '../components/Layout'
-import { Fragment, useState } from 'react'
-import Footer from '../components/Footer'
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/style.scss";
+import Layout from "../components/Layout";
+import { Fragment, useState } from "react";
+import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps }) {
   const [isnav, setisnav] = useState(false);
@@ -11,12 +11,9 @@ function MyApp({ Component, pageProps }) {
   }
   return (
     <Fragment>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-      <Footer />
+      <Component {...pageProps} />
     </Fragment>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;
