@@ -171,8 +171,12 @@ li{
 }
 
 .donut {
-    max-width: 800px;
+    maz-width: 100%;
     margin: 0 auto;
+    
+    @include media-size(big-mobile) {
+        max-width: 800px;
+    }
 }
 
 .line-canvas-para {
@@ -198,4 +202,25 @@ li{
 .placeholder{
    margin-bottom: 190px;
    background-color:$white;
+}
+.people {
+    align-items: center;
+        line-height:1rem ;
+    p {
+        max-width: 100%;
+        height: auto;
+        font-size: 100px;
+        font-weight: 400;
+        color: #565656;
+        text-align: center;
+        align-self: flex-end;
+
+        @include media-size(desktop) {
+            text-align: left;
+            max-width: 50%;
+        }
+    }
+    .second{
+        color: #b8b8b8 !important;
+    }
 }
