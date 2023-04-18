@@ -37,11 +37,11 @@ export default function PageDetail({ compProps }) {
     return (
       <Fragment>
         <div className="card-title ">
-          <h3 class="card-title text-center">{fileType.title}</h3>
+          <h3 className="card-title text-center">{fileType.title}</h3>
         </div>
-        <div class="card-body">
+        <div className="card-body">
             <p>{para?.map ((item) => item.value)}</p>
-            <ul class="card-text">
+            <ul className="card-text">
               {files?.map((item,index) => (
                 <li key={index}>{item.content[0].content[0].value}</li>
               ))}

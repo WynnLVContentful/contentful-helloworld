@@ -1,6 +1,5 @@
 .three-column {
-    background-color: #775c3e;
-  
+    background-color: #f8f5f5;
     &-list {
         align-items: stretch;
 
@@ -37,7 +36,7 @@
     }
 
     .col {
-        border-left: 1px solid #F2F2DA;
+        border-left: 1px solid $--border-line-color;
         padding: 1em;
         position: relative;
 
