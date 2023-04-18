@@ -14,6 +14,7 @@ import HorizontalOne from "../components/sideBarCanvas";
 import TwoColumnCanvas from "../components/twoColumnCanvas";
 import ThreeColumnLayout from "../components/ThreeColumnLayout";
 import Layout from "../components/Layout";
+import PressUpdate from "../components/press-updates";
 
 export async function getStaticProps() {
   const client = createClient({

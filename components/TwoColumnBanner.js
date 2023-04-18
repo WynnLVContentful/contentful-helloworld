@@ -1,30 +1,31 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import sideImages from "../public/farmer-image.jpg";
 import PromoBannerHeader from "./promoBannerheader";
-// import yonathan from "../public/farmer-image.jpg";
+
 function TwoColumnBanner({ image, title, description, imageSide, buttonCTA }) {
-  
+{/* <PromoBannerHeader buttonCTA={buttonCTA} /> */}
   const texts = description;
   const imageRenderSide = imageSide.includes("Left")
     ? "reverse-position-image"
     : "content";
-
+ 
   return (
     <section className={`two-column mt-5`}>
-      <div className={!imageSide.includes("default") && imageRenderSide}>
+      <div className={!imageSide.includes("default") ? imageRenderSide : undefined}>
         <div className="two-column-image-left col-12 col-lg-6">
-          {/* {(!imageSide.includes("default") || image != undefined) ? (
+          {(!imageSide.includes("default") || image != undefined) ? (
             <Image
-              width={image.fields?.file.details.image.width || 350}
-              height={image.fields?.file.details.image.height || 350}
-              src={"https://" + image.fields?.file.url || sideImages}
-              alt={image.fields?.description}
+              width={!image && image.fields?.file.details.image.width }
+              height={!image && image.fields?.file.details.image.height }
+              src={!image && "https://" + image.fields?.file.url }
+              alt={!image && image.fields?.description}
               className="left-side-image"
             />
           ) : (
             <span></span>
-          )} */}
+          )}
         </div>
         <div
           className={`two-column-text-right ${
@@ -40,9 +41,17 @@ function TwoColumnBanner({ image, title, description, imageSide, buttonCTA }) {
               {title}
             </h3>
             <div>{documentToReactComponents(texts)}</div>
-            {imageSide.includes("default") && (
-              <PromoBannerHeader buttonCTA={buttonCTA} />
+            <div className=" includes">
+              <div>
+              {imageSide.includes("default") && (
+               buttonCTA.map((item) =>(
+                <PromoBannerHeader buttonCTA={item.fields} key={item.sys.id} /> 
+               ))
             )}
+              </div>
+           
+            </div>
+           
           </div>
         </div>
       </div>

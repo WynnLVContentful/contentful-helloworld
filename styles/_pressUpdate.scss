@@ -1,0 +1,29 @@
+.press-list{
+    margin: 0 40px;
+    .col{
+        border-bottom: 2px solid  $--border-line-color;
+    }
+ &-title{
+    font-family: $font-rustica-500 !important;
+    text-align: left !important;
+    font-size:$font-size-24;
+    margin-top: 20px;
+    font-weight: 500;
+    line-height: 2rem;
+    color: $--txt-color;
+  }
+  &-label{
+    font-family: $font-Ave;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    font-size: $font-size-20;
+
+}
+&-link{
+    font-size: $font-size-16;
+    text-decoration: underline;
+    color: $--txt-color;
+    text-transform: capitalize;
+}
+
+}

@@ -7,7 +7,6 @@ import MobileNav from './mobile-navbar';
 import Header from './Header';
 
 export default function Layout({ children, content }) {
-  console.log(content)
  const logoContent = content.fields.logo.fields;
   return (
     <Fragment>

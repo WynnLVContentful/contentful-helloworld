@@ -72,7 +72,7 @@ function HorizontalOne(props) {
                 mode: 'single',
                 callbacks: {
                     label: function (tooltipItems, data) {
-                        return ' ' + tooltipItems.xLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                        return ' ' + String(tooltipItems.xLabel).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                     }
                 }
             }
