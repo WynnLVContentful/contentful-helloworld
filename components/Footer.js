@@ -17,9 +17,6 @@ export default function Footer() {
         "fields.title": "Footer",
         include: 10,
       });
-
-      console.log(["Footer", items[0]]);
-
       setColumns(items[0].fields.columns);
     } catch (err) {
       console.log(err);
@@ -28,7 +25,6 @@ export default function Footer() {
   useEffect(() => {
     fetchData();
   }, []);
-
   return (
     <footer className="footer">
       <div className="container">
@@ -52,7 +48,7 @@ export default function Footer() {
               case "textBlock":
                 return (
                   <div className="col list-unstyled ">
-                    <h3>{column.fields.title}</h3>
+                   { documentToReactComponents(column.fields.content)}
                   </div>
                 );
             }

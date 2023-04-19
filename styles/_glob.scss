@@ -58,7 +58,6 @@ h2,
 
 h3,
 .h3 {
-    text-align: left;
     @include font-size-m($font-size-20);
     font-family: $font-rustica-500;
 
@@ -69,7 +68,6 @@ h3,
 
 h4,
 .h4 {
-    text-align: left;
     @include font-size-m($font-size-20);
     font-family: $font-rustica-500;
 
@@ -80,7 +78,6 @@ h4,
 
 h5,
 .h5 {
-    text-align: left;
     @include font-size-m($font-size-16);
     font-family: $font-rustica-500;
 
@@ -223,4 +220,20 @@ li{
     .second{
         color: #b8b8b8 !important;
     }
+}
+.container {
+    max-width: 1140px;
+    @media(max-width:768px){
+        max-width: 720px;
+    }
+    @media(max-width:576px){
+        max-width: 540px;
+    }
+}
+.one-column{
+    width: 100%;
+   margin: 0 auto;
+   padding: 0 10px;
+  
+
 }

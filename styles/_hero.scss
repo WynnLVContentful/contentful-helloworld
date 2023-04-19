@@ -3,7 +3,12 @@
 
     .mob-web-image {
         width: 100%;
-        height: auto;
+        object-fit: cover;
+        height: 525px;
+        object-position: center top;
+        @media (min-width:2000px) {
+            height: auto;
+        }
 
     }
 

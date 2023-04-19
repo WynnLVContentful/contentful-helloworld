@@ -7,7 +7,9 @@ const renderOptions = {
       // target the contentType of the EMBEDDED_ENTRY to display as you need
       if (node.data.target.sys.contentType.sys.id === "blogPost") {
         return (
-          <a href={`/blog/${node.data.target.fields.slug}`}>            {node.data.target.fields.title}
+          <a href={`/blog/${node.data.target.fields.slug}`}>
+            {" "}
+            {node.data.target.fields.title}
           </a>
         );
       }
@@ -52,12 +54,17 @@ const renderOptions = {
 };
 
 export default function TextBlock({ compProps }) {
-
-  const {content, align} = compProps.fields;
-
+  console.log(compProps)
+  const { content, align } = compProps.fields;
+    const positionAlign = align.toLowerCase()
   return (
     <section className="text-block">
-        {documentToReactComponents(content, renderOptions)}      
+      <div className="container">
+        <h2>{compProps.fields.title}</h2>
+        <div className={`one-column ${align ? "text-"+positionAlign : undefined}  `}>
+          {documentToReactComponents(content, renderOptions)}
+        </div>
+      </div>
     </section>
   );
 }

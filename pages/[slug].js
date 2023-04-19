@@ -2,6 +2,7 @@ import {createClient} from 'contentful'
 import React, { Fragment } from 'react';
 import RenderComponents from '../components/RenderComponents';
 
+import InvesterCanvas from '../components/invester-files-canvas';
 
 export async function getStaticPaths(){
   const client = createClient({
@@ -38,9 +39,8 @@ export async function getStaticProps({params}){
   }
 
 export default function LandingPage({page}) {
-  
   const {content} = page.fields;
-  
+
   return (
     <Fragment>
       <RenderComponents components={content}></RenderComponents>

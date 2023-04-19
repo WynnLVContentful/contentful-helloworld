@@ -210,7 +210,7 @@
     z-index: 9999;
     position: fixed;
     top: 0;
-    opacity: 0.6;
+    opacity: 1;
     width: 100%;
     animation: slide-down 300ms forwards;
 }
@@ -222,7 +222,7 @@
     }
 
     100% {
-        opacity: 0.9;
+        opacity: 1;
         transform: translateY(0);
     }
 }
