@@ -30,6 +30,8 @@ export async function getStaticProps({params}){
   
     const {items} = await client.getEntries({include: 10, content_type: 'page', 'fields.slug' : params.slug });
 
+    console.log(items);
+
     if(!items || items.length <= 0){
       return{
         notFound: true
