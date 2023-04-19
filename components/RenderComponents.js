@@ -7,6 +7,7 @@ import PromoBanner from '../components/PromoBanner';
 import ThreeColumnLayout from '../components/ThreeColumnLayout';
 import Layout from './Layout';
 import TextBlock from './TextBlock';
+import PressUpdate from './press-updates';
 export default function RenderComponents({components}){
 console.log(components);
 const findersLogo = components.find(
@@ -40,6 +41,9 @@ const findersLogo = components.find(
                             break;
                         case "textBlock":               
                             jsx = <TextBlock key={comp.sys.id} compProps={comp}></TextBlock>                
+                        break;
+                        case "pressUpdates":               
+                            jsx = <PressUpdate key={comp.sys.id} compProps={comp}></PressUpdate>                
                         break;
                         }
                         

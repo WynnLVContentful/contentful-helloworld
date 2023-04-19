@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import renderOptions from "./RichtextRenderOptions";
 
 export default function PageDetail({ compProps }) {
   if (!compProps) return;
@@ -58,7 +59,7 @@ export default function PageDetail({ compProps }) {
           <div className="container">
             <div className="detail-page text-center">
               <h1>{title}</h1>
-              {documentToReactComponents(texts)}
+              {documentToReactComponents(texts, renderOptions)}
             </div>
           </div>
         </section>
