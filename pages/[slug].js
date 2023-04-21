@@ -1,8 +1,9 @@
 import {createClient} from 'contentful'
-import React, { Fragment } from 'react';
+import React, { Fragment, useRouter } from 'react';
 import RenderComponents from '../components/RenderComponents';
 import PreviewExit from "../components/preview-exit";
 import InvesterCanvas from '../components/invester-files-canvas';
+import contentfulClient from '../utils/contentfulclient';
 
 export async function getStaticPaths(){
   const client = createClient({
@@ -18,29 +19,16 @@ export async function getStaticPaths(){
 
   return {
     paths,
-    fallback: false
+    fallback: true
   }
 }
 
 export async function getStaticProps(context){
-  const contentfulClients = createClient({
-    space: "vsfvp3vjns8g",
-    accessToken: "QY1yhc6cZbV4FNiVoOrEPvKjbEyHjcgs5-5mZeQTqik",
-  });
-  const previewsContent = createClient({
-    space: "vsfvp3vjns8g",
-    environment: "master", // defaults to 'master' if not set
-    accessToken: "RgsQUYjSQI1_FA6Sf2IMlC1yPaWqlhOhUvWhAaq8g1c",
-    host: "preview.contentful.com",
-  });
-  let client = context.preview ? previewsContent : contentfulClients;
-    const {items} = await client.getEntries({include: 10, content_type: 'page', 'fields.slug' : context.params.slug });
-    if(!items || items.length <= 0){
-      return{
-        notFound: true
-      };
-    }
-  
+ 
+  var client = contentfulClient(context.preview);
+
+  const {items} = await client.getEntries({include: 10, content_type: 'page', 'fields.slug' : context.params.slug });
+
     return{
       props: {
         preview : context.preview || false,
@@ -50,13 +38,20 @@ export async function getStaticProps(context){
     }
   }
 
-export default function LandingPage({ page,preview }) {
+export default function LandingPage({ page, preview }) {
+
+  if(!page) {
+    return (<div>Loading...</div>)
+  }
+
   const {content} = page.fields;
+
 
   return (
     <Fragment>
        {preview && <PreviewExit/>}
-      <RenderComponents components={content}></RenderComponents>
+
+       <RenderComponents components={content}></RenderComponents>
     </Fragment>
   )
 }

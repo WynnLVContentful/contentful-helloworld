@@ -2,19 +2,12 @@ import { createClient } from "contentful";
 import React, { Fragment } from "react";
 import RenderComponents from "../components/RenderComponents";
 import PreviewExit from "../components/preview-exit";
+import contentfulClient from "../utils/contentfulclient";
 
 export async function getStaticProps(context) {
-  const contentfulClients = createClient({
-    space: "vsfvp3vjns8g",
-    accessToken: "QY1yhc6cZbV4FNiVoOrEPvKjbEyHjcgs5-5mZeQTqik",
-  });
-  const previewsContent = createClient({
-    space: "vsfvp3vjns8g",
-    environment: "master", // defaults to 'master' if not set
-    accessToken: "RgsQUYjSQI1_FA6Sf2IMlC1yPaWqlhOhUvWhAaq8g1c",
-    host: "preview.contentful.com",
-  });
-  const client = context.preview ? previewsContent : contentfulClients;
+  
+  var client = contentfulClient(context.preview);
+  
   const { items } = await client.getEntries({
     include: 10,
     content_type: "page",
