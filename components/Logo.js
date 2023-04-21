@@ -5,7 +5,6 @@ import logo from "../public/wynn-logo.gif"
 
 export default function Logo(props) {
     if(!props.imageLogo) return;
-    console.log('https://' + props.imageLogo.file.url)
     return (
         <Fragment>
             <div className="logo">
