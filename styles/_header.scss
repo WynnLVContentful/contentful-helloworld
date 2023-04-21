@@ -57,7 +57,7 @@
                 img{
                     width: 130px;
                     height: auto;
-                    margin-top: -19px;
+                    margin-top: 0px;
                     @include media-size(desktop) {
                         margin-top: 0px;
                    }
@@ -91,7 +91,7 @@
             }
             @include media-size(desktop) {
                 &::after {
-                bottom: -30px;
+                bottom: -23px;
             }
            }
 
