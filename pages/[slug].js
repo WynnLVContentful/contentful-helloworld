@@ -6,11 +6,8 @@ import InvesterCanvas from '../components/invester-files-canvas';
 import contentfulClient from '../utils/contentfulClient';
 
 export async function getStaticPaths(){
-  const client = createClient({
-    space: "vsfvp3vjns8g",
-    accessToken: "QY1yhc6cZbV4FNiVoOrEPvKjbEyHjcgs5-5mZeQTqik"
-  });
-
+  
+  const client = contentfulClient();
   const res = await client.getEntries({content_type:'page'});
   
   const paths = res.items.map(item => {
