@@ -3,6 +3,7 @@ import React, { Fragment, useRouter } from 'react';
 import RenderComponents from '../components/RenderComponents';
 import PreviewExit from "../components/preview-exit";
 import InvesterCanvas from '../components/invester-files-canvas';
+import contentfulClient from '../utils/contentfulclient';
 
 export async function getStaticPaths(){
   const client = createClient({
@@ -23,27 +24,11 @@ export async function getStaticPaths(){
 }
 
 export async function getStaticProps(context){
-  const contentfulClients = createClient({
-    space: "vsfvp3vjns8g",
-    accessToken: "QY1yhc6cZbV4FNiVoOrEPvKjbEyHjcgs5-5mZeQTqik",
-  });
+ 
+  var client = contentfulClient(context.preview);
 
-  const previewsContent = createClient({
-    space: "vsfvp3vjns8g",
-    environment: "master", // defaults to 'master' if not set
-    accessToken: "RgsQUYjSQI1_FA6Sf2IMlC1yPaWqlhOhUvWhAaq8g1c",
-    host: "preview.contentful.com",
-  });
+  const {items} = await client.getEntries({include: 10, content_type: 'page', 'fields.slug' : context.params.slug });
 
-  let client = context.preview ? previewsContent : contentfulClients;
-    const {items} = await client.getEntries({include: 10, content_type: 'page', 'fields.slug' : context.params.slug });
-
-    // if(!items || items.length <= 0){
-    //   return{
-    //     notFound: true
-    //   };
-    // }
-  
     return{
       props: {
         preview : context.preview || false,
@@ -58,13 +43,9 @@ export default function LandingPage({ page, preview }) {
   if(!page) {
     return (<div>Loading...</div>)
   }
+
   const {content} = page.fields;
 
-  // const router = useRouter();
-
-  // if (router.isFallback) {
-  //   <h1>Loading...</h1>;
-  // }
 
   return (
     <Fragment>
