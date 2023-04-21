@@ -2,7 +2,7 @@ import { createClient } from "contentful";
 import React, { Fragment } from "react";
 import RenderComponents from "../components/RenderComponents";
 import PreviewExit from "../components/preview-exit";
-import contentfulClient from "../utils/contentfulclient";
+import contentfulClient from "../utils/contentfulClient";
 
 export async function getStaticProps(context) {
   

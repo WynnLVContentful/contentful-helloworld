@@ -3,7 +3,7 @@ import React, { Fragment, useRouter } from 'react';
 import RenderComponents from '../components/RenderComponents';
 import PreviewExit from "../components/preview-exit";
 import InvesterCanvas from '../components/invester-files-canvas';
-import contentfulClient from '../utils/contentfulclient';
+import contentfulClient from '../utils/contentfulClient';
 
 export async function getStaticPaths(){
   const client = createClient({
