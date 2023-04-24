@@ -93,7 +93,7 @@
                 height: 2px;
                 transition: all 0.5s;
             }
-            @include media-size(desktop) {
+            @media (min-width: 1068px) {
                 &::after {
                     bottom: -23px;
                 }
@@ -105,7 +105,7 @@
                 &::after {
                     width: 10%;
                 }
-                @include media-size(desktop) {
+                @media (min-width: 1068px) {
                     &::after {
                         width: 100%;
                     }
