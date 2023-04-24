@@ -43,7 +43,6 @@ export default function LandingPage({ page, preview }) {
 
   const {content} = page.fields;
 
-
   return (
     <Fragment>
        {preview && <PreviewExit/>}

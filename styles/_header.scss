@@ -43,25 +43,29 @@
         position: relative;
         display: flex;
         justify-content: center;
+        width: 100%;
 
         .navbar-brand {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
-
+            justify-content: space-between !important;
+          @media (max-width: 1067px) {
+                width: 100%;
+                justify-content: center !important;
+          } 
             @include media-size(desktop) {
                 justify-content: flex-start;
             }
 
             .logo {
-                img{
+                img {
                     width: 130px;
                     height: auto;
                     margin-top: 0px;
                     @include media-size(desktop) {
                         margin-top: 0px;
-                   }
-                 }
+                    }
+                }
             }
         }
 
@@ -91,9 +95,9 @@
             }
             @include media-size(desktop) {
                 &::after {
-                bottom: -23px;
+                    bottom: -23px;
+                }
             }
-           }
 
             &:hover {
                 color: $--secondary-color-hover !important;
@@ -101,12 +105,12 @@
                 &::after {
                     width: 10%;
                 }
-               @include media-size(desktop) {
+                @include media-size(desktop) {
                     &::after {
-                    width: 100%;
+                        width: 100%;
+                    }
                 }
-               }
-                
+
             }
         }
 
@@ -166,8 +170,7 @@
                     padding: 12px 24px;
                     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; // Add a transition for background-color and color
 
-                    &:hover,
-                    &:focus {
+                    &:hover {
                         background-color: $--primary-color; // Change the background color to the primary color when hovering or focusing
                         color: $white; // Change the text color to white when hovering or focusing
                     }
@@ -227,7 +230,9 @@
     }
 }
 
-@include media-size(desktop) {
+@media (min-width: 1068px) {
+    
+
     .layout.navbar {
         .navbar-expand-lg .navbar-collapse {
             justify-content: flex-end !important;
@@ -248,7 +253,7 @@
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1068px) {
     .navbar-expand-lg .navbar-collapse {
         display: flex !important;
         flex-basis: auto;
@@ -258,6 +263,13 @@
             text-transform: uppercase;
             color: black;
             font-family: $font-rustica-500;
+        }
+    }
+}
+@media (max-width: 1067px) {
+    .navbar-expand-lg .navbar-collapse {
+        .nav-link {
+            display: none;
         }
     }
 }

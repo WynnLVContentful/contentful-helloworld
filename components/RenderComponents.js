@@ -10,6 +10,7 @@ import Layout from "./Layout";
 import TextBlock from "./TextBlock";
 import InvesterCanvas from "./invester-files-canvas";
 import PressUpdate from "./press-updates";
+import ImageResponsible from "./image-render";
 export default function RenderComponents({ components }) {
   const router = useRouter();
 
@@ -61,6 +62,11 @@ export default function RenderComponents({ components }) {
               <PressUpdate key={comp.sys.id} compProps={comp}></PressUpdate>
             );
             break;
+            case "imageResponse":
+              jsx = (
+                <ImageResponsible key={comp.sys.id} compProps={comp}/>
+              );
+              break;
         }
 
         return jsx;
