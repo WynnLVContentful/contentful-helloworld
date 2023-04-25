@@ -29,6 +29,7 @@ export default function Home({ page, preview }) {
     <Fragment>
       {preview && <PreviewExit/>}
       <RenderComponents components={content}></RenderComponents>
+   
     </Fragment>
   );
 }

@@ -6,7 +6,7 @@ export default function TeaserCardCarousel({ compProps }) {
   return (
     <section className="teaser-card">
       <div className="container">
-        <h2 className="mb-5">{compProps.fields.title}</h2>
+        <h2 className="mb-3">{compProps.fields.title}</h2>
         <div className="teaser-card-carousel">
           <div className="row row-cols-1 row-cols-lg-3 teaser-card-holder">
             {compProps.fields.cards.map((items, index) => (

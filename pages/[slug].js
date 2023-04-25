@@ -46,8 +46,8 @@ export default function LandingPage({ page, preview }) {
   return (
     <Fragment>
        {preview && <PreviewExit/>}
-
        <RenderComponents components={content}></RenderComponents>
+       
     </Fragment>
   )
 }
