@@ -14,7 +14,6 @@ import ImageResponsible from "./image-render";
 import TopButton from "./TopButton";
 export default function RenderComponents({ components }) {
   const router = useRouter();
-
   const findersLogo = components.find(
     (comp) => comp.sys.contentType.sys.id == "header"
   );

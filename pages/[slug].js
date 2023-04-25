@@ -4,6 +4,7 @@ import RenderComponents from '../components/RenderComponents';
 import PreviewExit from "../components/preview-exit";
 import InvesterCanvas from '../components/invester-files-canvas';
 import contentfulClient from '../utils/contentfulClient';
+import NotFound from './404';
 
 export async function getStaticPaths(){
   
@@ -16,7 +17,7 @@ export async function getStaticPaths(){
 
   return {
     paths,
-    fallback: true
+    fallback: false,
   }
 }
 
@@ -25,6 +26,14 @@ export async function getStaticProps(context){
   var client = contentfulClient(context.preview);
 
   const {items} = await client.getEntries({include: 10, content_type: 'page', 'fields.slug' : context.params.slug });
+
+if (items.length == 0){
+  return{
+    props: {},
+    notFound:true
+  }
+  
+}
 
     return{
       props: {
@@ -36,18 +45,19 @@ export async function getStaticProps(context){
   }
 
 export default function LandingPage({ page, preview }) {
-
+let content = []
   if(!page) {
     return (<div>Loading...</div>)
   }
-
-  const {content} = page.fields;
-
+  else if(page.length == 0){
+    return (<NotFound/>)
+  }else{
+     content = page.fields.content;
+  }
   return (
     <Fragment>
        {preview && <PreviewExit/>}
        <RenderComponents components={content}></RenderComponents>
-       
     </Fragment>
   )
 }

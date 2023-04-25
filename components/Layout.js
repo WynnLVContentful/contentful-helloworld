@@ -5,8 +5,10 @@ import Navigation from './Navigation'
 import Footer from './Footer'
 import MobileNav from './mobile-navbar';
 import Header from './Header';
+import NotFound from '../pages/404'
 
 export default function Layout({ children, content }) {
+if (content == undefined) return
  const logoContent = content.fields.logo.fields;
   return (
     <Fragment>
