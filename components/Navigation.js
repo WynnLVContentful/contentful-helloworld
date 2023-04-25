@@ -16,7 +16,7 @@ export  default function Navigation() {
             
                 const {items} = await client.getEntries({content_type:'navigation', 'fields.slug' : 'header-nav'});
                 const lis = items[0].fields.menus.map(item => {
-          
+           
                     return  (
                       <li className="nav-item" key={item.sys.id}>
                         <Link href={item.fields.url} className="nav-link">

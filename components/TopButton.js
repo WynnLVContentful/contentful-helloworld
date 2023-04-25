@@ -6,7 +6,6 @@ function TopButton() {
     const scrollStep = topElement.scrollHeight / 125;
     const scrollInterval = setInterval(() => {
       if (topElement.scrollTop !== 0) {
-        console.log(topElement.scrollTop, scrollStep)
         topElement.scrollTop -= scrollStep;
       } else {
         clearInterval(scrollInterval);

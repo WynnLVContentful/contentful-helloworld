@@ -7,6 +7,7 @@ import MobileNav from './mobile-navbar';
 import Header from './Header';
 
 export default function Layout({ children, content }) {
+if (content == undefined) return
  const logoContent = content.fields.logo.fields;
   return (
     <Fragment>

@@ -315,3 +315,20 @@ a {
     }
     }
 }
+.not-found{
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+ p{
+    font-size: $font-size-32;
+    text-align: center; }
+    .link-return-home{
+        
+    }
+    .link-return-home{
+        display: flex;
+        justify-content: center;
+    }
+}

@@ -13,6 +13,13 @@ export async function getStaticProps(context) {
     content_type: "page",
     "fields.slug": "/",
   });
+  if (items.length == 0){
+    return{
+      props: {},
+      notFound:true
+    }
+    
+  }
   return {
     props: {
       preview : context.preview || false,
@@ -29,7 +36,6 @@ export default function Home({ page, preview }) {
     <Fragment>
       {preview && <PreviewExit/>}
       <RenderComponents components={content}></RenderComponents>
-   
     </Fragment>
   );
 }

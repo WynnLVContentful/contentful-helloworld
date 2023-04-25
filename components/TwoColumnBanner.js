@@ -5,6 +5,7 @@ import sideImages from "../public/farmer-image.jpg";
 import PromoBannerHeader from "./promoBannerheader";
 
 function TwoColumnBanner({ image, title, description, imageSide, buttonCTA }) {
+  console.log(buttonCTA)
   const texts = description;
   const imageRenderSide = imageSide.includes("Left")
     ? "reverse-position-image"
@@ -39,12 +40,12 @@ function TwoColumnBanner({ image, title, description, imageSide, buttonCTA }) {
                 imageSide.includes("default") && "header-resize"
               }`}
             >
-              {title}
+              {title !== undefined && title}
             </h3>
             <div>{documentToReactComponents(texts)}</div>
             <div className=" includes">
               <div>
-                {imageSide.includes("default") &&
+                {imageSide.includes("default") && buttonCTA !== undefined &&
                   buttonCTA.map((item) => (
                     <PromoBannerHeader
                       buttonCTA={item.fields}

@@ -4,6 +4,7 @@ export default function HeroCarousel({ compProps }) {
   if (!compProps) return;
 
   const { image } = compProps.fields;
+ 
   let load = {};
   if (image !== undefined || image.length > 1) {
     image.map((item, index) => {
@@ -15,7 +16,6 @@ export default function HeroCarousel({ compProps }) {
 
   return (
     <Fragment>
-
       <section className="hero-banner">
         <div className="hero-image-web">
           {image !== undefined && (
