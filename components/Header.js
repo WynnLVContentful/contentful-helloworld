@@ -58,7 +58,7 @@ export default function Header(props) {
                     </div>
                 </div>
             </header>
-       {     navbar && <TopButton pos = {TopPosition/> }
+       {     navbar && <TopButton/> }
         </Fragment>
     );
 }

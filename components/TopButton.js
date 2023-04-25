@@ -1,9 +1,6 @@
 import { useEffect } from "react";
 import { BsChevronUp } from "react-icons/bs";
-function TopButton({ pos }) {
-  // useEffect(() => {
-
-  // },[])
+function TopButton() {
   function TopHandler() {
     const topElement = document.documentElement;
     const scrollStep = topElement.scrollHeight / 125;
