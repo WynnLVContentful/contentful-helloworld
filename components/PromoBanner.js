@@ -6,7 +6,7 @@ export default function PromoBanner({ compProps }) {
   const { bannerTitle, bannerDescription, bannerCtAs, bannerImage, layout } =  compProps.fields;
   const texts = bannerDescription.content[0].content[0].value;
   return (
-    <section className="mt-5 ">
+    <section className="mt-2">
       <div className="container">
         <div className="detail-page text-center">
           {layout && (

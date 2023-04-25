@@ -11,7 +11,7 @@ function TwoColumnBanner({ image, title, description, imageSide, buttonCTA }) {
     : "content";
 
   return (
-    <section className={`two-column mt-5`}>
+    <section className={`two-column mt-1`}>
       <div
         className={!imageSide.includes("default") ? imageRenderSide : undefined}
       >

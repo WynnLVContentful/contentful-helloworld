@@ -1,10 +1,13 @@
-import { Fragment, use, useEffect, useState } from "react";
+import { Fragment, use, useEffect, useState, useRef } from "react";
 import Logo from "./Logo";
 import Navigation from "./Navigation";
 import MobileNav from "./mobile-navbar";
+import TopButton from "./TopButton";
 export default function Header(props) {
+    const TopPosition = useRef();
     const [toggle, setToggle] = useState(false);
     const [navbar, setNavbar] = useState(false);
+    // const [showTop, setShowTop] = useState(false);
     function toggleButton() {
         setToggle((prev) => !prev)
     }
@@ -34,7 +37,7 @@ export default function Header(props) {
 
     return (
         <Fragment>
-            <header tabIndex= "0" >
+            <header tabIndex= "0" ref={TopPosition} >
                 <div className={`layout ${navbar ? "active" : ""}`} >
                     <div className='container'>
                         <nav className='navbar navbar navbar-expand-lg'>
@@ -55,6 +58,7 @@ export default function Header(props) {
                     </div>
                 </div>
             </header>
+       {     navbar && <TopButton pos = {TopPosition/> }
         </Fragment>
     );
 }
