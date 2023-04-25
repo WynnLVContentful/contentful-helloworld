@@ -19,7 +19,6 @@ export default function Footer() {
       });
       setColumns(items[0].fields.columns);
     } catch (err) {
-      console.log(err);
     }
   }
   useEffect(() => {
@@ -33,10 +32,10 @@ export default function Footer() {
             switch (column.sys.contentType.sys.id) {
               case "navigation":
                 return (
-                  <ul className="col list-unstyled ">
+                  <ul className="col list-unstyled " key={column.sys.id}>
                     {column.fields.menus.map((menu) => {
                       return (
-                        <li>
+                        <li key={menu.sys.id}>
                           <Link href={menu.fields.url}>
                             {menu.fields.label}
                           </Link>
@@ -47,7 +46,7 @@ export default function Footer() {
                 );
               case "textBlock":
                 return (
-                  <div className="col list-unstyled ">
+                  <div className="col list-unstyled " key={column.sys.id}>
                    { documentToReactComponents(column.fields.content)}
                   </div>
                 );

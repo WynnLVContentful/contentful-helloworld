@@ -25,6 +25,7 @@ export default function HeroCarousel({ compProps }) {
               width={1400}
               height={414}
               className="mob-web-image"
+              priority
             />
           )}
         </div>
@@ -36,6 +37,7 @@ export default function HeroCarousel({ compProps }) {
               width={575}
               height={375}
               className="image-mobile"
+              priority
             />
           ) : (
             <span></span>
