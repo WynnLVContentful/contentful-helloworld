@@ -5,6 +5,7 @@ import PreviewExit from "../components/preview-exit";
 import InvesterCanvas from '../components/invester-files-canvas';
 import contentfulClient from '../utils/contentfulClient';
 import NotFound from './404';
+import Head from 'next/head'
 
 export async function getStaticPaths(){
   
@@ -56,6 +57,9 @@ let content = []
   }
   return (
     <Fragment>
+        <Head>
+        <title>{page.fields.pageMetadata !== undefined &&  page.fields.pageMetadata.fields.title}</title>
+      </Head>
        {preview && <PreviewExit/>}
        <RenderComponents components={content}></RenderComponents>
     </Fragment>

@@ -7,10 +7,14 @@ export default function Header(props) {
     const TopPosition = useRef();
     const [toggle, setToggle] = useState(false);
     const [navbar, setNavbar] = useState(false);
-    // const [showTop, setShowTop] = useState(false);
     function toggleButton() {
         setToggle((prev) => !prev)
     }
+    function closeIt(e = null){
+        if(e.target.className.includes('mobile-nav-open') || e.target.className.includes('nav-link')  ) {
+            toggleButton()
+        }
+       }
 
     useEffect(() => {
         if (toggle) {
@@ -28,13 +32,13 @@ export default function Header(props) {
             }
         })
         window.addEventListener("resize", () => {
-            if (window.innerWidth < 991) {
+            if (window.innerWidth < 1068) {
                 return;
             }
             setToggle(false)
         })
     }
-
+   
     return (
         <Fragment>
             <header tabIndex= "0" ref={TopPosition} >
@@ -48,7 +52,7 @@ export default function Header(props) {
                             <div className='navbar-navs collapse navbar-collapse'>
                                 <Navigation />
                             </div>
-                            {<MobileNav toggleFeature={toggle} />}
+                            {<MobileNav toggleFeature={toggle} closeIt={closeIt}/>}
                         </nav>
                     </div>
                     <div id="nav-toggle" className={toggle ? "open" : "close"} onClick={toggleButton} tabIndex= "0" >

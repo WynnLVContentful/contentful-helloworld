@@ -104,6 +104,18 @@
     background-color:transparent;
 }
 
+@mixin active-navbar {
+    color: $--secondary-color-hover !important;
+    background-color: transparent !important;
+    &::after {
+        width: 10%;
+    }
+    @media (min-width: 1068px) {
+        &::after {
+            width: 100%;
+        }
+    }
+}
 //For breakpoints
 @mixin media-size($size) {
     @if $size == big-mobile {

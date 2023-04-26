@@ -1,6 +1,7 @@
 .layout {
     position: relative;
     background: $white;
+
     #nav-toggle {
         width: 30px;
         height: 24px;
@@ -49,10 +50,12 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between !important;
-          @media (max-width: 1067px) {
+
+            @media (max-width: 1067px) {
                 width: 100%;
                 justify-content: center !important;
-          } 
+            }
+
             @include media-size(desktop) {
                 justify-content: flex-start;
             }
@@ -62,6 +65,7 @@
                     width: 130px;
                     height: auto;
                     margin-top: 0px;
+
                     @include media-size(desktop) {
                         margin-top: 0px;
                     }
@@ -81,6 +85,7 @@
         .nav-link {
             text-decoration: none;
             transition: color 0.5s ease-in-out;
+
             &::after {
                 position: absolute;
                 bottom: 0px;
@@ -93,6 +98,7 @@
                 height: 2px;
                 transition: all 0.5s;
             }
+
             @media (min-width: 1068px) {
                 &::after {
                     bottom: -23px;
@@ -100,17 +106,10 @@
             }
 
             &:hover {
-                color: $--secondary-color-hover !important;
-                background-color: transparent !important;
-                &::after {
-                    width: 10%;
-                }
-                @media (min-width: 1068px) {
-                    &::after {
-                        width: 100%;
-                    }
-                }
-
+                @include active-navbar;
+            }
+            &.active-nav{
+                @include active-navbar;
             }
         }
 
@@ -208,6 +207,9 @@
         }
     }
 }
+.nav-lists{
+  
+}
 
 .layout.active {
     z-index: 9999;
@@ -231,7 +233,7 @@
 }
 
 @media (min-width: 1068px) {
-    
+
 
     .layout.navbar {
         .navbar-expand-lg .navbar-collapse {
@@ -266,6 +268,7 @@
         }
     }
 }
+
 @media (max-width: 1067px) {
     .navbar-expand-lg .navbar-collapse {
         .nav-link {

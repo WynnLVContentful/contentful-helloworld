@@ -5,7 +5,6 @@ import sideImages from "../public/farmer-image.jpg";
 import PromoBannerHeader from "./promoBannerheader";
 
 function TwoColumnBanner({ image, title, description, imageSide, buttonCTA }) {
-  console.log(buttonCTA)
   const texts = description;
   const imageRenderSide = imageSide.includes("Left")
     ? "reverse-position-image"
