@@ -1,11 +1,12 @@
 import { Fragment, useEffect, useState } from "react";
 import Link from "next/link";
 import {createClient} from 'contentful'
+import { useRouter } from "next/router";
 
 function MobileNav(props) {
+    let router = useRouter()
     const checkMobileNav = props.toggleFeature ? "open" : "close";
     const [links, setLink] = useState([]);
-
     useEffect(() => { 
         async function fetchData() {
             try {
@@ -16,9 +17,10 @@ function MobileNav(props) {
             
                 const {items} = await client.getEntries({content_type:'navigation', 'fields.slug' : 'header-nav'});
                 const lis = items[0].fields.menus.map(item => {
+                    const navActive = router.query.slug == undefined ? "/" : router.query.slug 
                     return  (
                       <li className="nav-item" key={item.sys.id}>
-                        <Link href={item.fields.url} className="nav-link">
+                        <Link href={item.fields.url} className={item.fields.url.includes(navActive) ? "nav-link active-nav" : "nav-link" }>
                             {item.fields.label}
                         </Link>
                       </li>
@@ -33,7 +35,7 @@ function MobileNav(props) {
         fetchData();
     }, []);
     return (<Fragment>
-        <section className={`mobile-nav mobile-nav-${checkMobileNav}`}>
+        <section className={`mobile-nav mobile-nav-${checkMobileNav}`} onClick={(e) => props.closeIt(e)}>
             <ul className="nav-lists">
             {links}            
             </ul>
