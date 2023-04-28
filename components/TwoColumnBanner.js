@@ -41,7 +41,7 @@ function TwoColumnBanner({ image, title, description, imageSide, buttonCTA }) {
             >
               {title !== undefined && title}
             </h3>
-            <div>{documentToReactComponents(texts)}</div>
+            <div>{description !== undefined && documentToReactComponents(texts)}</div>
             <div className=" includes">
               <div>
                 {imageSide.includes("default") && buttonCTA !== undefined &&
