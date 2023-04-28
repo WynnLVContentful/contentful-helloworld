@@ -60,7 +60,7 @@ h3,
 .h3 {
     @include font-size-m($font-size-20);
     font-family: $font-rustica-500;
-
+    text-transform: capitalize;
     &::after {
         display: none;
     }
@@ -331,4 +331,7 @@ a {
         display: flex;
         justify-content: center;
     }
+}
+.limit-width{
+    min-width: 0px !important;
 }
