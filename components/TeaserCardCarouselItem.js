@@ -7,7 +7,7 @@ function TeaserCardItem({ title, image, description }) {
   let imageRender = image !== undefined && image?.fields.file.url;
   return (
     <div className="col mb-3">
-      <div className="card  border-0">
+      <div className="card  border-0 limit-width-image">
         {image !== undefined ? (
           <Image
             src={image && `https:${imageRender}`}

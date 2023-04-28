@@ -62,6 +62,86 @@ function PieChart({ chartData }) {
         },
         animateScale: true,
     }
+    const options2 = {
+        responsive: true,
+        aspectRatio: 1,
+        animations: {
+            tension: {
+                duration: 40,
+                easing: 'reverse',
+                from: 0,
+                to: 1,
+                loop: false
+            },
+        },
+        plugins: {
+            legend: {
+                display: true,
+                position: "bottom",
+                maxWidth: 200,
+                lineWidth: 200,
+                align: "left",
+                labels: {
+                    font: {
+                        size: 14
+                    }
+                }
+            },
+            title: {
+                display: true,
+                text: '2020',
+                padding: {
+                    top: 10,
+                    bottom: 10
+                }
+            },
+            tooltip: {
+                enabled: true,
+                position: 'nearest',
+            }
+        },
+        animateScale: true,
+    }
+    const options3 = {
+        responsive: true,
+        aspectRatio: 1,
+        animations: {
+            tension: {
+                duration: 40,
+                easing: 'reverse',
+                from: 0,
+                to: 1,
+                loop: false
+            },
+        },
+        plugins: {
+            legend: {
+                display: true,
+                position: "bottom",
+                maxWidth: 200,
+                lineWidth: 200,
+                align: "left",
+                labels: {
+                    font: {
+                        size: 14
+                    }
+                }
+            },
+            title: {
+                display: true,
+                text: '2021',
+                padding: {
+                    top: 10,
+                    bottom: 10
+                }
+            },
+            tooltip: {
+                enabled: true,
+                position: 'nearest',
+            }
+        },
+        animateScale: true,
+    }
     const First = () => {
         return <Fragment>
             <div className="row row-cols-1 row-cols-lg-2 people align-item-center">
@@ -98,10 +178,10 @@ function PieChart({ chartData }) {
                             <Doughnut data={data} options={options} />
                         </div >
                         <div className=" donut col-lg-4 col-12 ">
-                            <Doughnut data={data} options={options} />
+                            <Doughnut data={data} options={options2} />
                         </div >
                         <div className=" donut col-lg-4 col-12 ">
-                            <Doughnut data={data} options={options} />
+                            <Doughnut data={data} options={options3} />
                         </div >
                     </div>
                 </div>
