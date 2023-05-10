@@ -25,7 +25,7 @@
         flex-direction: row;
 
         .two-column-text-right {
-            max-width: calc(50% - 20px);
+            max-width: calc(50% + 20px);
         }
 
         @if $size ==reverse {

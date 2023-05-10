@@ -325,7 +325,6 @@ a {
     font-size: $font-size-32;
     text-align: center; }
     .link-return-home{
-        
     }
     .link-return-home{
         display: flex;
@@ -334,4 +333,64 @@ a {
 }
 .limit-width{
     min-width: 0px !important;
+}
+.sliderss{
+    background: linear-gradient(to bottom, #fff, #fff 109.8px, #f7f7f7 109.8px, #f7f7f7 100%);
+    background-size: 100% 100%;
+    padding-bottom: 49.8px;
+    .custom-prev-arrow{
+        cursor: pointer;
+        z-index: 1000;
+        .icon-up{
+            position: absolute !important;
+            top: 37%;
+            left: -17px !important;
+            font-size: 31px !important;
+            font-weight: 900;
+            border: solid 1px #f7f7f7;
+            border-radius: 50% !important;
+            background: #fff !important;
+            color: #626262 !important;
+            padding: 10px !important;
+            z-index: 1000;
+        }
+     
+    }
+    .custom-next-arrow{
+        cursor: pointer;
+        .icon-up{
+            position: absolute;
+            right: -17px;
+            top: 37%;
+            font-size: 31px !important;
+            border: solid 1px #f7f7f7;
+            border-radius: 50% !important;
+            background: #fff !important;
+            color: #626262 !important;
+            padding: 10px !important;
+            z-index: 1000;
+        }
+    }
+    .slick-slide:first-child .slick-current  ~ .custom-prev-arrow     {
+        display: none;
+    }
+    .slick-list{
+        .slick-track
+        {
+            display: flex !important;
+            gap: 15px;
+            .slick-slide{
+                background-color: white;
+                cursor: grab;
+                align-self: stretch !important;
+                img{
+                    width: 100%;
+                    height: auto;
+                }   
+               
+            }
+        }
+    }
+   
+       
 }
