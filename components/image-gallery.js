@@ -87,7 +87,7 @@ if(window.innerWidth <= 1019) return
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1.5,
+          slidesToShow: 1.18,
           slidesToScroll: 1,
           arrows: false,
           dots: false,
@@ -100,7 +100,7 @@ if(window.innerWidth <= 1019) return
     <div className="sliderss">
       <div className="container">
         <div className="col-xs-12 p-0">
-          <h2 className="h3 text-left d-flex  text-dark mb-3" tabIndex="0" >
+          <h2 className="h3 d-flex  justify-content-center text-dark mb-3" tabIndex="0" >
             {compProps.fields.title}
           </h2>
           <Slider {...settings}>
@@ -110,8 +110,11 @@ if(window.innerWidth <= 1019) return
                 description={items?.fields.bannerDescription}
                 title={items?.fields.bannerTitle}
                 image={items?.fields.bannerImage}
+                layout= {items.fields.layout}
+                button={items.fields.bannerCtAs}
               />
             ))}
+
           </Slider>
         </div>
       </div>
