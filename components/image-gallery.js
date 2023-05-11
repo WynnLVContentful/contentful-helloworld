@@ -9,7 +9,6 @@ import {
 } from "react-icons/bs";
 const ImageGallary = ({ compProps }) => {
   if (!compProps) return;
-  console.log(compProps)
   const [changes, setChanges] = useState(false);
   const CustomPrevArrow = ({ onClick }) => {
     return (

@@ -10,11 +10,6 @@ import { useEffect } from "react";
 function TeaserCardItem({ title, image, description, layout, button = null }) {
   if (!title && !image && !description & !button) return;
   let imageRender = image !== undefined && image?.fields.file.url;
-  useEffect(() => {
-    button?.map((item) => {
-      console.log(item.fields.text);
-    });
-  }, []);
   return (
     <div className=" d-flex align-items-stretch col mb-3">
       <div className="card  border-0 limit-width-image">
@@ -40,42 +35,42 @@ function TeaserCardItem({ title, image, description, layout, button = null }) {
           </div>
         </div>
         {
-        (layout == "imageGallary") 
-      ? 
-        (button?.length > 0) ? (
-          <div className="card-footer image-gallary-footer text-center bg-white">
-            <div className="container">
-              {button?.map((item) =>
-                item.fields.ctaStyle == "Text" ? (
-                  <p className="text-form">
-                    <Link
-                      href={item.fields.target}
-                      className="link-detail text-center text-dark text-uppercase"
-                    >
-                      {item.fields.text}
-                      <span className="font-left">
-                        <BsCaretRightFill />
-                      </span>
-                    </Link>
-                  </p>
-                ) : (
-                  <p className="text-center button-form">
-                    <Link
-                      href={item.fields.target}
-                      className="text-center text-uppercase"
-                    >
-                      {item.fields.text}
-                    </Link>
-                  </p>
-                )
-              )}
-            </div>
-          </div>
-        ) : (
-          <div className="card-footer image-gallary-footer text-center bg-white">
-            <div className="set-height"> </div>
-          </div>
-        ) : <span></span>}
+          (layout == "imageGallary")
+            ?
+            (button?.length > 0) ? (
+              <div className="card-footer image-gallary-footer text-center bg-white">
+                <div className="container">
+                  {button?.map((item) =>
+                    item.fields.ctaStyle == "Text" ? (
+                      <p className="text-form">
+                        <Link
+                          href={item.fields.target}
+                          className="link-detail text-center text-dark text-uppercase"
+                        >
+                          {item.fields.text}
+                          <span className="font-left">
+                            <BsCaretRightFill />
+                          </span>
+                        </Link>
+                      </p>
+                    ) : (
+                      <p className="text-center button-form">
+                        <Link
+                          href={item.fields.target}
+                          className="text-center text-uppercase"
+                        >
+                          {item.fields.text}
+                        </Link>
+                      </p>
+                    )
+                  )}
+                </div>
+              </div>
+            ) : (
+              <div className="card-footer image-gallary-footer text-center bg-white">
+                <div className="set-height"> </div>
+              </div>
+            ) : <span></span>}
       </div>
     </div>
   );
