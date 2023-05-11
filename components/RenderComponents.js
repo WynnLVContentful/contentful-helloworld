@@ -12,6 +12,7 @@ import InvesterCanvas from "./invester-files-canvas";
 import PressUpdate from "./press-updates";
 import ImageResponsible from "./image-render";
 import TopButton from "./TopButton";
+import ImageGallary from "./image-gallery";
 export default function RenderComponents({ components }) {
   const router = useRouter();
   const findersLogo = components.find(
@@ -21,6 +22,7 @@ export default function RenderComponents({ components }) {
     <Layout content={findersLogo}>
       {components.map((comp) => {
         var jsx;
+    
         switch (comp.sys.contentType.sys.id) {
           case "header":
             jsx = <Logo key={comp.sys.id} compProps={comp} />;
@@ -47,16 +49,14 @@ export default function RenderComponents({ components }) {
             );
             break;
           case "teaserCardCarousel":
-            jsx = (
-              <TeaserCardCarousel
-                key={comp.sys.id}
-                compProps={comp}
-              ></TeaserCardCarousel>
-            );
+            jsx =(<TeaserCardCarousel key={comp.sys.id} compProps={comp}/>)
             break;
           case "textBlock":
             jsx = <TextBlock key={comp.sys.id} compProps={comp}></TextBlock>;
             break;
+            case "imageGallary":
+              jsx =  <ImageGallary key={comp.sys.id} compProps={comp}/>;
+              break;
           case "pressUpdates":
             jsx = (
               <PressUpdate key={comp.sys.id} compProps={comp}></PressUpdate>
@@ -70,7 +70,6 @@ export default function RenderComponents({ components }) {
         return jsx;
       })}
       {router.query.slug == "investor-summary" && <InvesterCanvas />}
-   
     </Layout>
   );
 }
