@@ -29,15 +29,13 @@ function TwoColumnBanner({ image, title, description, imageSide, buttonCTA }) {
           )}
         </div>
         <div
-          className={`two-column-text-right ${
-            imageSide.includes("default") ? "col-12" : "col-12 col-lg-6"
-          } `}
+          className={`two-column-text-right ${imageSide.includes("default") ? "col-12" : "col-12 col-lg-6"
+            } `}
         >
-          <div className="column-content p-4">
+          <div className="column-content p-0 p-md-4 ">
             <h3
-              className={`text-center mt-3  my-lg-1 ${
-                imageSide.includes("default") && "header-resize"
-              }`}
+              className={`text-center mt-3  my-lg-1 ${imageSide.includes("default") && "header-resize"
+                }`}
             >
               {title !== undefined && title}
             </h3>
